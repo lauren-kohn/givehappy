@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_165558) do
+ActiveRecord::Schema.define(version: 2021_08_16_165737) do
+
+  create_table "gifts", force: :cascade do |t|
+    t.integer "giver_id", null: false
+    t.integer "recipient_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["giver_id"], name: "index_gifts_on_giver_id"
+    t.index ["recipient_id"], name: "index_gifts_on_recipient_id"
+  end
 
   create_table "givers", force: :cascade do |t|
     t.string "name"
@@ -26,4 +36,6 @@ ActiveRecord::Schema.define(version: 2021_08_16_165558) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "gifts", "givers"
+  add_foreign_key "gifts", "recipients"
 end
