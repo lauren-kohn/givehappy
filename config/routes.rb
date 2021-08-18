@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   resources :gifts
   resources :recipients 
 
-  resources :givers do 
-    resources :gifts, shallow: true
-  end
+  resources :givers
 
 end
