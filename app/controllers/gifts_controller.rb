@@ -1,4 +1,4 @@
-class Gifts < ApplicationController
+class GiftsController < ApplicationController
 
     def index
     end 

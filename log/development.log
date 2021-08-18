@@ -61,3 +61,135 @@ FOREIGN KEY ("recipient_id")
   [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-08-18 14:24:05 -0500
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 22.0ms | Allocations: 654)
+Completed 200 OK in 170ms (Views: 67.0ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/giver/new" for ::1 at 2021-08-18 14:24:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/giver/new"):
+  
+Started GET "/giver" for ::1 at 2021-08-18 14:24:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/giver"):
+  
+Started GET "/giver" for ::1 at 2021-08-18 14:25:14 -0500
+  
+SyntaxError (/mnt/c/Users/laure/Development/code/Mod3/Project/givehappy/config/routes.rb:10: syntax error, unexpected end-of-input, expecting end):
+  
+config/routes.rb:10: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:10: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:10: syntax error, unexpected end-of-input, expecting end
+Started GET "/giver" for ::1 at 2021-08-18 14:25:41 -0500
+  
+SyntaxError (/mnt/c/Users/laure/Development/code/Mod3/Project/givehappy/config/routes.rb:12: syntax error, unexpected end-of-input, expecting end):
+  
+config/routes.rb:12: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:12: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:12: syntax error, unexpected end-of-input, expecting end
+Started GET "/giver" for ::1 at 2021-08-18 14:25:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/giver"):
+  
+Started GET "/giver" for ::1 at 2021-08-18 14:27:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/giver"):
+  
+Started GET "/givers" for ::1 at 2021-08-18 14:27:46 -0500
+  
+Zeitwerk::NameError (expected file /mnt/c/Users/laure/Development/code/Mod3/Project/givehappy/app/controllers/givers_controller.rb to define constant GiversController, but didn't):
+  
+zeitwerk (2.4.2) lib/zeitwerk/loader/callbacks.rb:18:in `on_file_autoloaded'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:27:in `block in require'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `tap'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `require'
+activesupport (6.1.4) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.4) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/givers" for ::1 at 2021-08-18 14:28:55 -0500
+  
+ActionController::RoutingError (uninitialized constant GiversController
+Did you mean?  GiftsController):
+  
+Started GET "/gifts" for ::1 at 2021-08-18 14:29:25 -0500
+Processing by GiftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/index.html.erb within layouts/application
+  Rendered gifts/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 461.5ms | Allocations: 13288)
+Completed 200 OK in 476ms (Views: 470.7ms | Allocations: 14392)
+
+
+Started GET "/recipients" for ::1 at 2021-08-18 14:29:36 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  Rendered recipients/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 63.5ms | Allocations: 1517)
+Completed 200 OK in 76ms (Views: 69.3ms | Allocations: 2293)
+
+
+Started GET "/givers" for ::1 at 2021-08-18 14:29:46 -0500
+  
+ActionController::RoutingError (uninitialized constant GiversController
+Did you mean?  GiftsController):
+  

@@ -1,4 +1,4 @@
-class Recipients < ApplicationController
+class RecipientsController < ApplicationController
 
     def index
     end 

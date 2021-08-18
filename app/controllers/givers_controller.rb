@@ -1,4 +1,4 @@
-class Givers < ApplicationController
+class GiversController < ApplicationController
 
     def index
     end
@@ -18,7 +18,7 @@ class Givers < ApplicationController
     private
 
     def giver_params 
-        
+
     end
 
 end
