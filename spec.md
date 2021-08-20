@@ -18,11 +18,20 @@ Specs:
  X The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
     The gift model is the join table, containing giver_ids and recipient_ids, and also has a "name" attribute.
  
- Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+ X Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+   Validations are present on Giver, Gift and Recipient models.
+
  Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
- Include signup
- Include login
- Include logout
+ 
+ X Include signup
+   A signup route leads to givers#new, which has a view and is handled by the Givers controller.
+
+ X Include login
+   The login route leads to sessions#new, which has a view and posts to sessions#create.
+
+ X Include logout
+   The logout route leads to sessions#destroy, which logs out the user by eliminating their user_id from the session hash.
+   
  Include third party signup/login (how e.g. Devise/OmniAuth)
  Include nested resource show or index (URL e.g. users/2/recipes)
  Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
