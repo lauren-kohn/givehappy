@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     end 
 
     def create 
-        Giver.find_by(email: params[:giver][:email])
+        @giver = Giver.find_by(email: params[:giver][:email])
         if @giver.try(:authenticate, params[:giver][:password])
             session[:giver_id] = @giver.id
             redirect_to giver_path(@giver)
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session.delete[:user_id]
+        session.delete(:giver_id)
         redirect_to '/'
     end
     

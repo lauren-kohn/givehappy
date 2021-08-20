@@ -2182,3 +2182,629 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 48ms (Views: 47.9ms | ActiveRecord: 0.0ms | Allocations: 2041)
 
 
+Started GET "/login" for ::1 at 2021-08-19 21:14:56 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 471)
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 1770)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms | Allocations: 2024)
+
+
+Started POST "/login" for ::1 at 2021-08-19 21:15:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"garfield@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.6ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms | Allocations: 856)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:15:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 482)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 1781)
+Completed 200 OK in 47ms (Views: 46.8ms | ActiveRecord: 0.0ms | Allocations: 2035)
+
+
+Started POST "/login" for ::1 at 2021-08-19 21:15:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"name@name.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "name@name.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms | Allocations: 871)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:15:21 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 482)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 1782)
+Completed 200 OK in 43ms (Views: 42.8ms | ActiveRecord: 0.0ms | Allocations: 2036)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:15:50 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 471)
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 1771)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms | Allocations: 2027)
+
+
+Started POST "/login" for ::1 at 2021-08-19 21:16:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"garfield@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.6ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms | Allocations: 856)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:16:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 483)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | Allocations: 1782)
+Completed 200 OK in 51ms (Views: 51.1ms | ActiveRecord: 0.0ms | Allocations: 2036)
+
+
+Started GET "/" for ::1 at 2021-08-19 21:18:46 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 6.4ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 183.5ms | Allocations: 4527)
+Completed 200 OK in 231ms (Views: 201.5ms | ActiveRecord: 0.0ms | Allocations: 7514)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:18:56 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 46.7ms | Allocations: 2524)
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 3830)
+Completed 200 OK in 98ms (Views: 91.5ms | ActiveRecord: 0.0ms | Allocations: 4189)
+
+
+Started POST "/login" for ::1 at 2021-08-19 21:19:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"name@name.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "name@name.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/givers/2
+Completed 302 Found in 236ms (ActiveRecord: 6.8ms | Allocations: 8921)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:19:11 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 159)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 1587)
+Completed 200 OK in 74ms (Views: 66.2ms | ActiveRecord: 1.0ms | Allocations: 3085)
+
+
+Started GET "/logout" for ::1 at 2021-08-19 21:19:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/" for ::1 at 2021-08-19 21:25:04 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 7.5ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 159.1ms | Allocations: 4578)
+Completed 200 OK in 207ms (Views: 177.0ms | ActiveRecord: 0.0ms | Allocations: 7441)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:25:07 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 46.4ms | Allocations: 2529)
+  Rendered layout layouts/application.html.erb (Duration: 103.5ms | Allocations: 3836)
+Completed 200 OK in 110ms (Views: 104.5ms | ActiveRecord: 0.0ms | Allocations: 4196)
+
+
+Started POST "/login" for ::1 at 2021-08-19 21:25:18 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"name@name.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.3ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "name@name.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/givers/2
+Completed 302 Found in 223ms (ActiveRecord: 7.6ms | Allocations: 8922)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:25:19 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 154)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 1582)
+Completed 200 OK in 73ms (Views: 65.2ms | ActiveRecord: 1.0ms | Allocations: 3080)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:25:51 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.2ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 55.7ms | Allocations: 1462)
+Completed 200 OK in 62ms (Views: 56.7ms | ActiveRecord: 1.2ms | Allocations: 2282)
+
+
+Started GET "/logout" for ::1 at 2021-08-19 21:25:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/givers/2" for ::1 at 2021-08-19 21:28:56 -0500
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.1ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 1858)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 4.9ms | Allocations: 11655)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>GiveHappy</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
+  </head>
+
+  <div>
+    <%= link_to "Log Out", logout_path, method: => :delete %>
+  </div>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>GiveHappy</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:    
+9:        <%= stylesheet_link_tag 'application', media: 'all' %>
+10:    
+11:      </head>
+12:    
+13:      <div>
+14:        <%= link_to "Log Out", logout_path, method: => :delete %>
+15:      </div>
+16:    
+17:      <body>
+18:        <%= yield %>
+19:      </body>
+20:    </html>
+  
+app/views/layouts/application.html.erb:14: syntax error, unexpected =>
+app/views/layouts/application.html.erb:14: syntax error, unexpected =>
+app/views/layouts/application.html.erb:14: syntax error, unexpected =>
+app/views/layouts/application.html.erb:14: syntax error, unexpected =>
+app/views/layouts/application.html.erb:14: syntax error, unexpected =>
+app/views/layouts/application.html.erb:14: syntax error, unexpected =>
+Started GET "/givers/2" for ::1 at 2021-08-19 21:29:52 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 171.6ms | Allocations: 4600)
+Completed 200 OK in 258ms (Views: 191.9ms | ActiveRecord: 5.6ms | Allocations: 14428)
+
+
+Started GET "/logout" for ::1 at 2021-08-19 21:29:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/givers/2" for ::1 at 2021-08-19 21:30:06 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.2ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 1609)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 1.2ms | Allocations: 2576)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:30:52 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.3ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 175.5ms | Allocations: 4601)
+Completed 200 OK in 259ms (Views: 196.3ms | ActiveRecord: 5.6ms | Allocations: 14427)
+
+
+Started GET "/logout" for ::1 at 2021-08-19 21:31:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/givers/2" for ::1 at 2021-08-19 21:34:37 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.2ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 1609)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 1.2ms | Allocations: 2571)
+
+
+Started GET "/logout" for ::1 at 2021-08-19 21:34:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/givers/2" for ::1 at 2021-08-19 21:35:28 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.1ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 1465)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 1.1ms | Allocations: 2284)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:35:30 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.3ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 59.0ms | Allocations: 1465)
+Completed 200 OK in 62ms (Views: 59.7ms | ActiveRecord: 1.3ms | Allocations: 2289)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:35:45 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (0.9ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 421)
+  Rendered layout layouts/application.html.erb (Duration: 156.0ms | Allocations: 4661)
+Completed 200 OK in 250ms (Views: 170.8ms | ActiveRecord: 5.4ms | Allocations: 14464)
+
+
+Started GET "/logout" for ::1 at 2021-08-19 21:35:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/givers/2" for ::1 at 2021-08-19 21:40:11 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 10.9ms | Allocations: 659)
+  Rendered layout layouts/application.html.erb (Duration: 170.1ms | Allocations: 4674)
+Completed 200 OK in 255ms (Views: 191.7ms | ActiveRecord: 4.4ms | Allocations: 14550)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:40:17 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 63758ms (ActiveRecord: 0.0ms | Allocations: 95595)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `destroy'
+app/controllers/sessions_controller.rb:18:in `destroy'
+Started GET "/givers/2" for ::1 at 2021-08-19 21:41:38 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (2.2ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 106724)
+  Rendered layout layouts/application.html.erb (Duration: 72.6ms | Allocations: 410155)
+Completed 200 OK in 102ms (Views: 78.5ms | ActiveRecord: 2.2ms | Allocations: 764745)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:41:41 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 7717ms (ActiveRecord: 0.0ms | Allocations: 148531)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `destroy'
+app/controllers/sessions_controller.rb:18:in `destroy'
+Started GET "/givers/2" for ::1 at 2021-08-19 21:42:03 -0500
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 659)
+  Rendered layout layouts/application.html.erb (Duration: 176.3ms | Allocations: 4725)
+Completed 200 OK in 257ms (Views: 196.1ms | ActiveRecord: 5.2ms | Allocations: 14532)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:42:05 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 586)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/sessions_controller.rb:17:in `destroy'
+Started GET "/givers/2" for ::1 at 2021-08-19 21:42:56 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 1734)
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 1.4ms | Allocations: 2701)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:42:58 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 1567)
+Completed 200 OK in 64ms (Views: 61.9ms | ActiveRecord: 1.0ms | Allocations: 2392)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:43:00 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 633)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/sessions_controller.rb:17:in `destroy'
+Started GET "/givers/2" for ::1 at 2021-08-19 21:43:20 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.5ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 659)
+  Rendered layout layouts/application.html.erb (Duration: 166.0ms | Allocations: 4674)
+Completed 200 OK in 261ms (Views: 189.4ms | ActiveRecord: 7.7ms | Allocations: 14537)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:43:23 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Started DELETE "/logout" for ::1 at 2021-08-19 21:45:06 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 1554)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/sessions_controller.rb:17:in `destroy'
+Started GET "/" for ::1 at 2021-08-19 21:45:15 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 4.1ms | Allocations: 260)
+  Rendered layout layouts/application.html.erb (Duration: 168.0ms | Allocations: 4736)
+Completed 200 OK in 188ms (Views: 180.3ms | ActiveRecord: 0.0ms | Allocations: 5990)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:45:18 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 43.8ms | Allocations: 2529)
+  Rendered layout layouts/application.html.erb (Duration: 89.7ms | Allocations: 3835)
+Completed 200 OK in 98ms (Views: 90.7ms | ActiveRecord: 0.0ms | Allocations: 4192)
+
+
+Started POST "/login" for ::1 at 2021-08-19 21:45:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"name@name.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.7ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "name@name.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/givers/2
+Completed 302 Found in 229ms (ActiveRecord: 7.0ms | Allocations: 9069)
+
+
+Started GET "/givers/2" for ::1 at 2021-08-19 21:45:27 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 1705)
+Completed 200 OK in 71ms (Views: 63.8ms | ActiveRecord: 1.0ms | Allocations: 3204)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:45:30 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 621)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/sessions_controller.rb:17:in `destroy'
+Started GET "/givers/2" for ::1 at 2021-08-19 21:49:24 -0500
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 659)
+  Rendered layout layouts/application.html.erb (Duration: 178.8ms | Allocations: 4725)
+Completed 200 OK in 258ms (Views: 195.3ms | ActiveRecord: 5.0ms | Allocations: 14554)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:49:27 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for ::1 at 2021-08-19 21:49:27 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.9ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 56.0ms | Allocations: 1635)
+Completed 200 OK in 67ms (Views: 60.0ms | ActiveRecord: 0.0ms | Allocations: 2415)
+
+
+Started GET "/" for ::1 at 2021-08-19 21:49:52 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 63.9ms | Allocations: 1496)
+Completed 200 OK in 65ms (Views: 64.9ms | ActiveRecord: 0.0ms | Allocations: 1749)
+
+
+Started GET "/" for ::1 at 2021-08-19 21:50:06 -0500
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 7.9ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 167.9ms | Allocations: 4742)
+Completed 200 OK in 216ms (Views: 186.3ms | ActiveRecord: 0.0ms | Allocations: 7751)
+
+
+Started GET "/login" for ::1 at 2021-08-19 21:50:09 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 53.7ms | Allocations: 2525)
+  Rendered layout layouts/application.html.erb (Duration: 101.3ms | Allocations: 3907)
+Completed 200 OK in 107ms (Views: 102.1ms | ActiveRecord: 0.0ms | Allocations: 4266)
+
+
+Started POST "/login" for ::1 at 2021-08-19 21:50:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"garfield@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.6ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/givers/1
+Completed 302 Found in 216ms (ActiveRecord: 8.4ms | Allocations: 7110)
+
+
+Started GET "/givers/1" for ::1 at 2021-08-19 21:50:22 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGiver Load (0.9ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:19:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 404)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 1771)
+Completed 200 OK in 76ms (Views: 68.8ms | ActiveRecord: 0.9ms | Allocations: 3268)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-19 21:50:27 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/" for ::1 at 2021-08-19 21:50:27 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 64.9ms | Allocations: 1582)
+Completed 200 OK in 66ms (Views: 65.7ms | ActiveRecord: 0.0ms | Allocations: 1836)
+
+
