@@ -705,3 +705,23 @@ Processing by SessionsController#welcome as HTML
 Completed 200 OK in 53ms (Views: 52.5ms | Allocations: 1676)
 
 
+Started GET "/" for ::1 at 2021-08-19 19:08:21 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 57.0ms | Allocations: 1427)
+Completed 200 OK in 59ms (Views: 58.7ms | Allocations: 1822)
+
+
+Started GET "/" for ::1 at 2021-08-19 19:10:14 -0500
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 9.8ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 209.0ms | Allocations: 4537)
+Completed 200 OK in 292ms (Views: 240.6ms | ActiveRecord: 0.0ms | Allocations: 7522)
+
+
