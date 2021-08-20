@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
             session[:giver_id] = @giver.id
             redirect_to giver_path(@giver)
         else 
-            flash[:error] = "The credentials provided were incorrect. Please try again."
-            redirect_to login_path 
+            redirect_to login_path, alert: "The credentials provided were incorrect. Please try again."
         end 
     end
 

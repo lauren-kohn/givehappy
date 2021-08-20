@@ -1,5 +1,11 @@
 <h1>Log In</h1>
 
+<div>
+<% flash.each do |msg| %>
+    <%= msg.last %>
+<% end %>
+</div>
+
 <%= form_for(:giver, url: '/login') do |f| %>
 
   <div>
