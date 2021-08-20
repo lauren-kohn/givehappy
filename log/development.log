@@ -641,3 +641,22 @@ Processing by RecipientsController#show as HTML
 Completed 200 OK in 71ms (Views: 70.3ms | Allocations: 1681)
 
 
+Started GET "/recipients/edit" for ::1 at 2021-08-19 19:00:30 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 73.8ms | Allocations: 1429)
+Completed 200 OK in 81ms (Views: 78.9ms | Allocations: 1826)
+
+
+Started GET "/" for ::1 at 2021-08-19 19:00:36 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 5.7ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 74.1ms | Allocations: 1507)
+Completed 200 OK in 97ms (Views: 83.5ms | Allocations: 2287)
+
+
