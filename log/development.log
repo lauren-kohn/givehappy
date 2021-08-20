@@ -660,3 +660,48 @@ Processing by SessionsController#welcome as HTML
 Completed 200 OK in 97ms (Views: 83.5ms | Allocations: 2287)
 
 
+Started GET "/" for ::1 at 2021-08-19 19:04:01 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.4ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 67.0ms | Allocations: 1428)
+Completed 200 OK in 71ms (Views: 69.3ms | Allocations: 1681)
+
+
+Started GET "/" for ::1 at 2021-08-19 19:04:14 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.5ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 53.9ms | Allocations: 1424)
+Completed 200 OK in 59ms (Views: 57.9ms | Allocations: 1676)
+
+
+Started GET "/" for ::1 at 2021-08-19 19:04:35 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 1424)
+Completed 200 OK in 63ms (Views: 62.9ms | Allocations: 1676)
+
+
+Started GET "/" for ::1 at 2021-08-19 19:05:02 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 55.2ms | Allocations: 1424)
+Completed 200 OK in 57ms (Views: 56.4ms | Allocations: 1676)
+
+
+Started GET "/" for ::1 at 2021-08-19 19:05:04 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 1424)
+Completed 200 OK in 53ms (Views: 52.5ms | Allocations: 1676)
+
+
