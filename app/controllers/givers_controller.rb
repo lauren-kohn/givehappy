@@ -11,14 +11,16 @@ class GiversController < ApplicationController
             redirect_to giver_path(@giver) 
         else 
             render :new
-            flash[:alert] = "Please complete all fields."
+            #flash.now[:error] = "Please complete all fields."
         end
     end 
-    
-    def index
-    end
 
     def show
+        @giver = Giver.find_by_id(params[:id])
+        redirect_to '/' if !@giver
+    end
+    
+    def index
     end
     
     def edit 
