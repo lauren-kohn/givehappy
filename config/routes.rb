@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/' => 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/signup' => 'user#new'
+  get '/signup' => 'giver#new'
 
   resources :gifts
   resources :recipients 
