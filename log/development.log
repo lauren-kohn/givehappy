@@ -4937,3 +4937,70 @@ puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
 puma (5.4.0) lib/puma/server.rb:440:in `process_client'
 puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-08-21 17:03:42 -0500
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 14.2ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 315.6ms | Allocations: 4878)
+Completed 200 OK in 425ms (Views: 356.5ms | ActiveRecord: 0.0ms | Allocations: 7866)
+
+
+Started GET "/login" for ::1 at 2021-08-21 17:03:49 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 491.2ms | Allocations: 4422)
+  Rendered layout layouts/application.html.erb (Duration: 813.3ms | Allocations: 5836)
+Completed 200 OK in 864ms (Views: 817.4ms | ActiveRecord: 0.0ms | Allocations: 6196)
+
+
+Started POST "/login" for ::1 at 2021-08-21 17:04:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"batman@batman.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (10.1ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "batman@batman.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/givers/4
+Completed 302 Found in 522ms (ActiveRecord: 46.1ms | Allocations: 7099)
+
+
+Started GET "/givers/4" for ::1 at 2021-08-21 17:04:00 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGiver Load (3.2ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 253)
+  Rendered layout layouts/application.html.erb (Duration: 133.9ms | Allocations: 1775)
+Completed 200 OK in 167ms (Views: 142.8ms | ActiveRecord: 3.2ms | Allocations: 3273)
+
+
+Started GET "/givers/4/edit" for ::1 at 2021-08-21 17:04:06 -0500
+Processing by GiversController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGiver Load (7.1ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/edit.html.erb within layouts/application
+  Rendered givers/edit.html.erb within layouts/application (Duration: 23.8ms | Allocations: 1092)
+  Rendered layout layouts/application.html.erb (Duration: 353.0ms | Allocations: 2492)
+Completed 200 OK in 414ms (Views: 356.9ms | ActiveRecord: 7.1ms | Allocations: 3428)
+
+
+Started PATCH "/givers/4" for ::1 at 2021-08-21 17:04:15 -0500
+Processing by GiversController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Batman1", "password"=>"[FILTERED]"}, "commit"=>"Edit Information", "id"=>"4"}
+No template found for GiversController#update, rendering head :no_content
+Completed 204 No Content in 98ms (ActiveRecord: 0.0ms | Allocations: 1546)
+
+
+Started PATCH "/givers/4" for ::1 at 2021-08-21 17:04:33 -0500
+Processing by GiversController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Batman1", "password"=>"[FILTERED]"}, "commit"=>"Edit Information", "id"=>"4"}
+No template found for GiversController#update, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
