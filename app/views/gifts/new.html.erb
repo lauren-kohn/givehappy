@@ -15,7 +15,15 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+
     <br>
+
+  <div>
+    <%= f.collection_select :recipient_id, Recipient.all, :id, :name %>
+  </div>
+
+    <br>
+    
     <%= f.submit "Create Gift" %>
 
 <% end %>

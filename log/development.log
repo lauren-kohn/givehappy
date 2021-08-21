@@ -5535,3 +5535,46 @@ Processing by GiftsController#create as HTML
   ↳ (byebug):1:in `create'
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
   ↳ (byebug):1:in `create'
+Started POST "/gifts" for ::1 at 2021-08-21 18:39:48 -0500
+  [1m[35m (25.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"cat ear headband"}, "commit"=>"Create Gift"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGiver Load (1.3ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGift Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "cat ear headband"], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  [1m[36mRecipient Load (10.2ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/gifts/new.html.erb:20
+  Rendered gifts/new.html.erb within layouts/application (Duration: 436.3ms | Allocations: 6106)
+  Rendered layout layouts/application.html.erb (Duration: 898.4ms | Allocations: 9360)
+Completed 200 OK in 1879ms (Views: 1117.6ms | ActiveRecord: 93.6ms | Allocations: 29784)
+
+
+Started POST "/gifts" for ::1 at 2021-08-21 18:40:04 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"cat ear headband", "recipient_id"=>"3"}, "commit"=>"Create Gift"}
+[31mUnpermitted parameter: :recipient_id[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGiver Load (8.2ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGift Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "cat ear headband"], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  [1m[36mRecipient Load (9.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/gifts/new.html.erb:20
+  Rendered gifts/new.html.erb within layouts/application (Duration: 43.7ms | Allocations: 1888)
+  Rendered layout layouts/application.html.erb (Duration: 505.6ms | Allocations: 3570)
+Completed 200 OK in 683ms (Views: 626.4ms | ActiveRecord: 19.7ms | Allocations: 8407)
+
+
