@@ -6,6 +6,7 @@ class GiftsController < ApplicationController
 
     def create 
         @gift = Gift.new(gift_params)
+        @gift.giver_id = session[:giver_id]
         if @gift.save
             redirect_to gift_path(@gift)
         else 

@@ -5220,3 +5220,318 @@ Processing by GiftsController#index as HTML
 Completed 200 OK in 172ms (Views: 155.1ms | ActiveRecord: 0.0ms | Allocations: 2427)
 
 
+Started GET "/gifts" for ::1 at 2021-08-21 17:29:01 -0500
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/index.html.erb within layouts/application
+  Rendered gifts/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 307)
+  Rendered layout layouts/application.html.erb (Duration: 332.9ms | Allocations: 4725)
+Completed 200 OK in 431ms (Views: 364.6ms | ActiveRecord: 0.0ms | Allocations: 7617)
+
+
+Started GET "/gifts" for ::1 at 2021-08-21 17:29:15 -0500
+Processing by GiftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/index.html.erb within layouts/application
+  Rendered gifts/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 327.8ms | Allocations: 1569)
+Completed 200 OK in 332ms (Views: 331.5ms | ActiveRecord: 0.0ms | Allocations: 1825)
+
+
+Started GET "/gifts/1" for ::1 at 2021-08-21 17:29:30 -0500
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGift Load (4.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/show.html.erb within layouts/application
+  Rendered gifts/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 125.3ms | Allocations: 1684)
+Completed 200 OK in 318ms (Views: 127.5ms | ActiveRecord: 20.0ms | Allocations: 9744)
+
+
+Started GET "/gifts/new" for ::1 at 2021-08-21 17:29:46 -0500
+Processing by GiftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 80.4ms | Allocations: 2522)
+  Rendered layout layouts/application.html.erb (Duration: 163.1ms | Allocations: 3922)
+Completed 200 OK in 178ms (Views: 164.5ms | ActiveRecord: 0.0ms | Allocations: 4338)
+
+
+Started POST "/gifts" for ::1 at 2021-08-21 17:29:57 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"flowers"}, "commit"=>"Create Gift"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gifts_controller.rb:9:in `create'
+  [1m[36mGift Exists? (7.9ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "flowers"], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/gifts_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1339)
+  Rendered layout layouts/application.html.erb (Duration: 322.9ms | Allocations: 2740)
+Completed 200 OK in 616ms (Views: 325.8ms | ActiveRecord: 9.3ms | Allocations: 11007)
+
+
+Started POST "/gifts" for ::1 at 2021-08-21 17:33:11 -0500
+  [1m[35m (26.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"flowers"}, "commit"=>"Create Gift"}
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 36.3ms | Allocations: 8375)
+
+
+  
+NameError (undefined local variable or method `giver_id' for #<GiftsController:0x007f14c9359f00>
+Did you mean?  giver_url):
+  
+app/controllers/gifts_controller.rb:9:in `create'
+Started POST "/gifts" for ::1 at 2021-08-21 17:35:16 -0500
+  [1m[35m (21.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"flowers"}, "commit"=>"Create Gift"}
+Started POST "/gifts" for ::1 at 2021-08-21 17:46:41 -0500
+  [1m[35m (26.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"flowers"}, "commit"=>"Create Gift"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGiver Load (1.3ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGift Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "flowers"], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 259.9ms | Allocations: 3039)
+  Rendered layout layouts/application.html.erb (Duration: 827.1ms | Allocations: 6289)
+Completed 200 OK in 1601ms (Views: 1043.1ms | ActiveRecord: 40.4ms | Allocations: 26746)
+
+
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20210821225858)
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20210821225858)
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20210821225858)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "agifts" ("id" integer NOT NULL PRIMARY KEY, "giver_id" integer NOT NULL, "recipient_id" integer NOT NULL, "name" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_recipient_id" ON "agifts" ("recipient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_giver_id" ON "agifts" ("giver_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "agifts" ("id","giver_id","recipient_id","name","created_at","updated_at")
+                     SELECT "id","giver_id","recipient_id","name","created_at","updated_at" FROM "gifts"[0m
+  [1m[35m (10.9ms)[0m  [1m[35mDROP TABLE "gifts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (16.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20210821225858)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "agifts" ("id" integer NOT NULL PRIMARY KEY, "giver_id" integer NOT NULL, "recipient_id" integer NOT NULL, "name" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_recipient_id" ON "agifts" ("recipient_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_giver_id" ON "agifts" ("giver_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "agifts" ("id","giver_id","recipient_id","name","created_at","updated_at")
+                     SELECT "id","giver_id","recipient_id","name","created_at","updated_at" FROM "gifts"[0m
+  [1m[35m (30.8ms)[0m  [1m[35mDROP TABLE "gifts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (40.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumn (20210821225858)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "agifts" ("id" integer NOT NULL PRIMARY KEY, "giver_id" integer NOT NULL, "recipient_id" integer NOT NULL, "name" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_recipient_id" ON "agifts" ("recipient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_giver_id" ON "agifts" ("giver_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "agifts" ("id","giver_id","recipient_id","name","created_at","updated_at")
+                     SELECT "id","giver_id","recipient_id","name","created_at","updated_at" FROM "gifts"[0m
+  [1m[35m (10.9ms)[0m  [1m[35mDROP TABLE "gifts"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20210821232248)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "agifts" ("id" integer NOT NULL PRIMARY KEY, "giver_id" integer NOT NULL, "recipient_id" integer NOT NULL, "name" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_recipient_id" ON "agifts" ("recipient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_agifts_on_giver_id" ON "agifts" ("giver_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "agifts" ("id","giver_id","recipient_id","name","created_at","updated_at")
+                     SELECT "id","giver_id","recipient_id","name","created_at","updated_at" FROM "gifts"[0m
+  [1m[35m (13.3ms)[0m  [1m[35mDROP TABLE "gifts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" integer NOT NULL PRIMARY KEY, "giver_id" integer NOT NULL, "recipient_id" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5eee704062"
+FOREIGN KEY ("recipient_id")
+  REFERENCES "recipients" ("id")
+, CONSTRAINT "fk_rails_a810951c46"
+FOREIGN KEY ("giver_id")
+  REFERENCES "givers" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_gifts_on_giver_id" ON "gifts" ("giver_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_gifts_on_recipient_id" ON "gifts" ("recipient_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "gifts" ("id","giver_id","recipient_id","name","created_at","updated_at")
+                     SELECT "id","giver_id","recipient_id","name","created_at","updated_at" FROM "agifts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "agifts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210821232248"]]
+  [1m[36mTRANSACTION (19.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/gifts" for ::1 at 2021-08-21 18:24:36 -0500
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"flowers"}, "commit"=>"Create Gift"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGiver Load (2.5ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGift Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "flowers"], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 320.2ms | Allocations: 3039)
+  Rendered layout layouts/application.html.erb (Duration: 1624.1ms | Allocations: 6293)
+Completed 200 OK in 2513ms (Views: 1840.3ms | ActiveRecord: 47.3ms | Allocations: 26757)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2021-08-21 18:24:47 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"flowers"}, "commit"=>"Create Gift"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGiver Load (3.5ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mGift Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "flowers"], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1049)
+  Rendered layout layouts/application.html.erb (Duration: 143.2ms | Allocations: 2731)
+Completed 200 OK in 209ms (Views: 191.9ms | ActiveRecord: 4.2ms | Allocations: 7530)
+
+
+Started GET "/gifts" for ::1 at 2021-08-21 18:27:38 -0500
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/index.html.erb within layouts/application
+  Rendered gifts/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 324)
+  Rendered layout layouts/application.html.erb (Duration: 433.1ms | Allocations: 4653)
+Completed 200 OK in 537ms (Views: 466.2ms | ActiveRecord: 0.0ms | Allocations: 7642)
+
+
+Started GET "/gifts/new" for ::1 at 2021-08-21 18:27:51 -0500
+Processing by GiftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 89.2ms | Allocations: 2528)
+  Rendered layout layouts/application.html.erb (Duration: 171.9ms | Allocations: 3927)
+Completed 200 OK in 261ms (Views: 173.4ms | ActiveRecord: 15.3ms | Allocations: 9143)
+
+
+Started POST "/gifts" for ::1 at 2021-08-21 18:28:03 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"shoes"}, "commit"=>"Create Gift"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mGiver Load (0.6ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mGift Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "shoes"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mRecipient Load (0.5ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mGift Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "shoes"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mGift Create (15.3ms)[0m  [1m[32mINSERT INTO "gifts" ("giver_id", "recipient_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["giver_id", 4], ["recipient_id", 3], ["name", "shoes"], ["created_at", "2021-08-21 23:31:16.542873"], ["updated_at", "2021-08-21 23:31:16.542873"]]
+  ↳ (byebug):1:in `create'
+  [1m[36mTRANSACTION (22.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `create'
+Started GET "/gifts/3" for ::1 at 2021-08-21 18:32:34 -0500
+  [1m[35m (36.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGift Load (10.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:25:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/show.html.erb within layouts/application
+  Rendered gifts/show.html.erb within layouts/application (Duration: 45.1ms | Allocations: 350)
+  Rendered layout layouts/application.html.erb (Duration: 1234.9ms | Allocations: 4678)
+Completed 200 OK in 1832ms (Views: 1353.3ms | ActiveRecord: 50.4ms | Allocations: 13679)
+
+
+Started GET "/recipients" for 127.0.0.1 at 2021-08-21 18:32:51 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (3.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (3.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (3.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (3.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 140.8ms | Allocations: 8525)
+  Rendered layout layouts/application.html.erb (Duration: 282.7ms | Allocations: 10047)
+Completed 200 OK in 351ms (Views: 266.4ms | ActiveRecord: 26.8ms | Allocations: 12535)
+
+
+Started GET "/gifts/new" for ::1 at 2021-08-21 18:33:02 -0500
+Processing by GiftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 112.5ms | Allocations: 2519)
+  Rendered layout layouts/application.html.erb (Duration: 249.8ms | Allocations: 3918)
+Completed 200 OK in 272ms (Views: 251.7ms | ActiveRecord: 0.0ms | Allocations: 4325)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2021-08-21 18:33:17 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gift"=>{"name"=>"cat ear headband"}, "commit"=>"Create Gift"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mGiver Load (0.5ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mGift Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "cat ear headband"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (byebug):1:in `create'
