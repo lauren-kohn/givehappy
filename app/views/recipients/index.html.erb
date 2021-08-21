@@ -1,6 +1,9 @@
 
 <ul>
-<%= @recipients.each do |r| %>
-    <li><%= link_to "#{r.name}", recipient_path(r.id) %> || <%= "#{r.gifts.all}"%></li>
+<% @recipients.each do |r| %>
+    <li><%= link_to "#{r.name}", recipient_path(r.id) %> || 
+        <% r.gifts.each do |g| %>
+            <%= g.name %></li>
+        <% end %>
 <% end %>
 </ul>
