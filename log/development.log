@@ -3881,3 +3881,348 @@ ActionView::Template::Error (no implicit conversion of Symbol into Hash):
   
 app/views/recipients/new.html.erb:13
 app/views/recipients/new.html.erb:5
+Started GET "/recipients/new" for ::1 at 2021-08-21 13:44:28 -0500
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms | Allocations: 3536)
+
+
+  
+ArgumentError (No association found for name `gift'. Has it been defined yet?):
+  
+app/models/recipient.rb:8:in `<class:Recipient>'
+app/models/recipient.rb:1:in `<main>'
+app/controllers/recipients_controller.rb:4:in `new'
+Started GET "/recipients/new" for ::1 at 2021-08-21 13:45:54 -0500
+  [1m[35m (15.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 23.4ms | Allocations: 7414)
+
+
+  
+NoMethodError (undefined method `build_gift' for #<Recipient id: nil, name: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/recipients_controller.rb:5:in `new'
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipient Create (5.8ms)[0m  [1m[32mINSERT INTO "recipients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Alfred"], ["created_at", "2021-08-21 18:47:15.993423"], ["updated_at", "2021-08-21 18:47:15.993423"]]
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGift Load (2.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ? /* loading for inspect */ LIMIT ?[0m  [["recipient_id", 1], ["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "vacuum"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "vacuum"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiver Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiver Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "batman@batman.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/recipients/new" for ::1 at 2021-08-21 13:54:53 -0500
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 10.4ms | Allocations: 7175)
+
+
+  
+NoMethodError (undefined method `build_gift' for #<Recipient id: nil, name: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/recipients_controller.rb:5:in `new'
+Started GET "/" for ::1 at 2021-08-21 14:00:06 -0500
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 11.1ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 296.1ms | Allocations: 4879)
+Completed 200 OK in 387ms (Views: 328.5ms | ActiveRecord: 0.0ms | Allocations: 7890)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 14:00:09 -0500
+Processing by RecipientsController#new as HTML
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 29.7ms | Allocations: 6309)
+
+
+  
+NoMethodError (undefined method `build_gift' for #<Recipient id: nil, name: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/recipients_controller.rb:5:in `new'
+Started GET "/" for ::1 at 2021-08-21 14:00:54 -0500
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 11.6ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 289.7ms | Allocations: 4878)
+Completed 200 OK in 372ms (Views: 323.9ms | ActiveRecord: 0.0ms | Allocations: 7849)
+
+
+Started GET "/" for ::1 at 2021-08-21 14:00:56 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.6ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 201.1ms | Allocations: 1605)
+Completed 200 OK in 204ms (Views: 203.5ms | ActiveRecord: 0.0ms | Allocations: 1861)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 14:00:59 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 340.4ms | Allocations: 6121)
+  Rendered layout layouts/application.html.erb (Duration: 343.6ms | Allocations: 6192)
+Completed 500 Internal Server Error in 525ms (ActiveRecord: 28.6ms | Allocations: 11453)
+
+
+  
+ActionView::Template::Error (undefined method `gift_id' for #<Recipient id: nil, name: nil, created_at: nil, updated_at: nil>
+Did you mean?  gift_ids
+               gift_ids=):
+    10:   </div>
+    11: 
+    12:   <p>Match your new recipient with a gift that already exists:</p>
+    13:     <%= f.collection_select(:gift_id, Gift.all, :id, :name) %>
+    14: 
+    15:   <p>or create a new gift: </p>
+    16:   <div>
+  
+app/views/recipients/new.html.erb:13
+app/views/recipients/new.html.erb:5
+Started GET "/recipients/new" for ::1 at 2021-08-21 14:01:57 -0500
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 102.2ms | Allocations: 6524)
+  Rendered layout layouts/application.html.erb (Duration: 103.3ms | Allocations: 6651)
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 9.3ms | Allocations: 14108)
+
+
+  
+ActionView::Template::Error (undefined method `gift_id' for #<Recipient id: nil, name: nil, created_at: nil, updated_at: nil>
+Did you mean?  gift_ids
+               gift_ids=):
+    10:   </div>
+    11: 
+    12:   <p>Match your new recipient with a gift that already exists:</p>
+    13:     <!--<%= f.collection_select(:gift_id, Gift.all, :id, :name) %>-->
+    14: 
+    15:   <p>or create a new gift: </p>
+    16:   <div>
+  
+app/views/recipients/new.html.erb:13
+app/views/recipients/new.html.erb:5
+Started GET "/recipients/new" for ::1 at 2021-08-21 14:23:41 -0500
+  [1m[35m (20.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 80.8ms | Allocations: 3976)
+  Rendered layout layouts/application.html.erb (Duration: 473.6ms | Allocations: 8132)
+Completed 200 OK in 632ms (Views: 512.0ms | ActiveRecord: 10.5ms | Allocations: 15619)
+
+
+Started POST "/recipients" for ::1 at 2021-08-21 14:24:04 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>"Robin", "gift"=>{"name"=>"pants"}}, "commit"=>"Create Recipient"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 652)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/recipients_controller.rb:36:in `[]'
+app/controllers/recipients_controller.rb:36:in `recipient_params'
+app/controllers/recipients_controller.rb:9:in `create'
+Started GET "/recipients/new" for 127.0.0.1 at 2021-08-21 14:24:45 -0500
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 67.0ms | Allocations: 4114)
+  Rendered layout layouts/application.html.erb (Duration: 335.5ms | Allocations: 8114)
+Completed 200 OK in 441ms (Views: 361.7ms | ActiveRecord: 6.3ms | Allocations: 15423)
+
+
+Started POST "/recipients" for 127.0.0.1 at 2021-08-21 14:24:48 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>"Robin", "gift"=>{"name"=>"pants"}}, "commit"=>"Create Recipient"}
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms | Allocations: 2587)
+
+
+  
+NameError (undefined local variable or method `gift_attributes' for #<RecipientsController:0x007f5bec573bc8>):
+  
+app/controllers/recipients_controller.rb:36:in `recipient_params'
+app/controllers/recipients_controller.rb:9:in `create'
+Started GET "/recipients/new" for ::1 at 2021-08-21 14:28:15 -0500
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 71.3ms | Allocations: 2967)
+  Rendered layout layouts/application.html.erb (Duration: 331.3ms | Allocations: 6971)
+Completed 200 OK in 472ms (Views: 367.6ms | ActiveRecord: 9.0ms | Allocations: 14476)
+
+
+Started POST "/recipients" for ::1 at 2021-08-21 14:28:20 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>"Robin"}, "commit"=>"Create Recipient"}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 2587)
+
+
+  
+NameError (undefined local variable or method `gift_attributes' for #<RecipientsController:0x007f4b4403e9e0>):
+  
+app/controllers/recipients_controller.rb:36:in `recipient_params'
+app/controllers/recipients_controller.rb:9:in `create'
+Started GET "/recipients/new" for 127.0.0.1 at 2021-08-21 14:29:07 -0500
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 80.4ms | Allocations: 2915)
+  Rendered layout layouts/application.html.erb (Duration: 343.0ms | Allocations: 6846)
+Completed 200 OK in 476ms (Views: 379.9ms | ActiveRecord: 8.9ms | Allocations: 14262)
+
+
+Started POST "/recipients" for ::1 at 2021-08-21 14:29:10 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>"Robin"}, "commit"=>"Create Recipient"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2227)
+
+
+  
+NoMethodError (undefined method `giver_id=' for #<Recipient:0x00007f40bc019d08>
+Did you mean?  giver_ids=
+               giver_ids
+               givers=):
+  
+app/controllers/recipients_controller.rb:10:in `create'
+Started GET "/recipients/new" for 127.0.0.1 at 2021-08-21 14:30:17 -0500
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 79.0ms | Allocations: 2898)
+  Rendered layout layouts/application.html.erb (Duration: 344.6ms | Allocations: 6898)
+Completed 200 OK in 492ms (Views: 377.8ms | ActiveRecord: 10.4ms | Allocations: 14243)
+
+
+Started POST "/recipients" for ::1 at 2021-08-21 14:30:21 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>"Robin"}, "commit"=>"Create Recipient"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipients_controller.rb:11:in `create'
+  [1m[36mRecipient Create (24.2ms)[0m  [1m[32mINSERT INTO "recipients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Robin"], ["created_at", "2021-08-21 19:30:21.264071"], ["updated_at", "2021-08-21 19:30:21.264071"]]
+  ↳ app/controllers/recipients_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (32.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipients_controller.rb:11:in `create'
+Redirected to http://localhost:3000/recipients/2
+Completed 302 Found in 94ms (ActiveRecord: 57.7ms | Allocations: 2750)
+
+
+Started GET "/recipients/2" for ::1 at 2021-08-21 14:30:21 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 103.5ms | Allocations: 1654)
+Completed 200 OK in 133ms (Views: 105.0ms | ActiveRecord: 0.0ms | Allocations: 2040)
+
+
+Started GET "/recipients/2" for 127.0.0.1 at 2021-08-21 14:31:48 -0500
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1883)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 1975)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.0ms | Allocations: 4933)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: This shows a singular recipient and their associated gifts.
+    2: 
+    3: <%= @recipient.name %>
+  
+app/views/recipients/show.html.erb:3
+Started GET "/recipients/new" for 127.0.0.1 at 2021-08-21 14:33:16 -0500
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 63.4ms | Allocations: 2898)
+  Rendered layout layouts/application.html.erb (Duration: 336.2ms | Allocations: 6967)
+Completed 200 OK in 445ms (Views: 361.8ms | ActiveRecord: 9.1ms | Allocations: 14270)
+
+
+Started GET "/recipients/2" for ::1 at 2021-08-21 14:33:22 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 811)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/recipients_controller.rb:22:in `show'
+Started GET "/recipients/2" for ::1 at 2021-08-21 14:34:35 -0500
+  [1m[35m (19.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipient Load (2.5ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1842)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 1934)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 7.0ms | Allocations: 8704)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: This shows a singular recipient and their associated gifts.
+    2: 
+    3: <%= @recipient.name %>
+  
+app/views/recipients/show.html.erb:3
+Started GET "/recipients/2" for ::1 at 2021-08-21 14:35:23 -0500
+  [1m[35m (19.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+Started GET "/recipients/2" for ::1 at 2021-08-21 14:37:26 -0500
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipient Load (2.6ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 326)
+  Rendered layout layouts/application.html.erb (Duration: 285.5ms | Allocations: 4652)
+Completed 200 OK in 452ms (Views: 316.1ms | ActiveRecord: 12.8ms | Allocations: 13102)
+
+
