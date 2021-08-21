@@ -3720,3 +3720,66 @@ Processing by RecipientsController#new as HTML
 Completed 200 OK in 57ms (Views: 51.7ms | ActiveRecord: 0.0ms | Allocations: 2445)
 
 
+Started GET "/" for ::1 at 2021-08-20 21:05:02 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 7.1ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 151.0ms | Allocations: 4874)
+Completed 200 OK in 194ms (Views: 168.3ms | ActiveRecord: 0.0ms | Allocations: 7858)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:05:05 -0500
+Processing by RecipientsController#new as HTML
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 5305)
+
+
+  
+NameError (undefined local variable or method `gifts' for #<Class:0x0000561ca62582a8>):
+  
+app/models/recipient.rb:4:in `<class:Recipient>'
+app/models/recipient.rb:1:in `<main>'
+app/controllers/recipients_controller.rb:4:in `new'
+Started GET "/" for ::1 at 2021-08-20 21:06:26 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 6.1ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 155.4ms | Allocations: 4874)
+Completed 200 OK in 200ms (Views: 171.5ms | ActiveRecord: 0.0ms | Allocations: 7883)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:06:28 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 34.0ms | Allocations: 2439)
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 3840)
+Completed 200 OK in 122ms (Views: 80.0ms | ActiveRecord: 3.9ms | Allocations: 9128)
+
+
+Started POST "/recipients" for ::1 at 2021-08-20 21:06:34 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>""}, "commit"=>"Create Recipient"}
+No template found for RecipientsController#create, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 0.0ms | Allocations: 1558)
+
+
+Started POST "/recipients" for ::1 at 2021-08-20 21:06:38 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>""}, "commit"=>"Create Recipient"}
+No template found for RecipientsController#create, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 315)
+
+
+Started POST "/recipients" for ::1 at 2021-08-20 21:06:40 -0500
+Processing by RecipientsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>""}, "commit"=>"Create Recipient"}
+No template found for RecipientsController#create, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+

@@ -1,1 +1,14 @@
 This form creates a new recipient (partial?)
+
+<h1>Add a new recipient!</h1>
+
+<%= form_for(@recipient) do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+    <%= f.submit "Create Recipient" %>
+
+<% end %>
