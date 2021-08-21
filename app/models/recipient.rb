@@ -5,6 +5,6 @@ class Recipient < ActiveRecord::Base
 
     validates :name, presence: true 
 
-    accepts_nested_attributes_for :gift
+    accepts_nested_attributes_for :gifts
 
 end
