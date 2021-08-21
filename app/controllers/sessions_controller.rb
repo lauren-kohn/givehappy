@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete(:giver_id)
-        redirect_to '/'
+        redirect_to '/', alert: "You have logged out."
     end
     
 end
