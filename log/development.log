@@ -3644,3 +3644,79 @@ Processing by GiversController#create as HTML
 Completed 200 OK in 63ms (Views: 52.0ms | ActiveRecord: 1.2ms | Allocations: 8085)
 
 
+Started GET "/" for ::1 at 2021-08-20 21:00:02 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 5.3ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 145.5ms | Allocations: 4850)
+Completed 200 OK in 189ms (Views: 162.8ms | ActiveRecord: 0.0ms | Allocations: 7884)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:00:08 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 1654)
+Completed 200 OK in 59ms (Views: 52.6ms | ActiveRecord: 0.0ms | Allocations: 2438)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:00:46 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 1565)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms | Allocations: 1818)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:00:47 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 1568)
+Completed 200 OK in 45ms (Views: 45.0ms | ActiveRecord: 0.0ms | Allocations: 1824)
+
+
+Started GET "/" for ::1 at 2021-08-20 21:00:49 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 1614)
+Completed 200 OK in 45ms (Views: 44.8ms | ActiveRecord: 0.0ms | Allocations: 1870)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:00:51 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 48.2ms | Allocations: 1565)
+Completed 200 OK in 49ms (Views: 48.9ms | ActiveRecord: 0.0ms | Allocations: 1817)
+
+
+Started GET "/" for ::1 at 2021-08-20 21:01:09 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 5.0ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 150.5ms | Allocations: 4857)
+Completed 200 OK in 197ms (Views: 167.9ms | ActiveRecord: 0.0ms | Allocations: 7886)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:01:11 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | Allocations: 1660)
+Completed 200 OK in 57ms (Views: 51.7ms | ActiveRecord: 0.0ms | Allocations: 2445)
+
+

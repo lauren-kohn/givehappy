@@ -11,17 +11,26 @@
   </head>
 
   <body>
+
+    <div>
+      <% flash.each do |msg| %>
+        <%= msg.last %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+
+    <br>
+    <br>
+
+    <%= link_to "Add a Recipient", new_recipient_path %>
+
+    <br> 
+    
     <div>
       <!-- needs conditional logged_in? logic -->
       <%= button_to "Log Out", logout_path, method: "delete" %>
     </div>
 
-  <div>
-    <% flash.each do |msg| %>
-      <%= msg.last %>
-    <% end %>
-  </div>
-
-    <%= yield %>
   </body>
 </html>
