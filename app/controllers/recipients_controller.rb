@@ -2,6 +2,7 @@ class RecipientsController < ApplicationController
 
     def new
         @recipient = Recipient.new
+        @recipient.build_gift
     end
     
     def index
@@ -25,6 +26,7 @@ class RecipientsController < ApplicationController
     private 
 
     def recipient_params
+        params.require(:recipient).permit(:name, :gift_attributes[:name])
     end
 
 end
