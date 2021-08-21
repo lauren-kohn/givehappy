@@ -9,16 +9,7 @@ This form creates a new recipient (partial?)
     <%= f.text_field :name %>
   </div>
 
-  <p>Match your new recipient with a gift that already exists:</p>
-    <%= f.collection_select(:gift_id, Gift.all, :id, :name) %>
 
-  <p>or create a new gift: </p>
-  <div>
-    <%= f.fields_for :gift do |g| %>
-        <%= g.label :name %>
-        <%= g.text_field :name %>
-    <% end %>
-  </div>
 
   <br>
     <%= f.submit "Create Recipient" %>
