@@ -3840,3 +3840,44 @@ ActionView::Template::Error (no implicit conversion of Symbol into Hash):
   
 app/views/recipients/new.html.erb:13
 app/views/recipients/new.html.erb:5
+Started GET "/" for ::1 at 2021-08-21 13:35:31 -0500
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 9.9ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 260.0ms | Allocations: 4857)
+Completed 200 OK in 362ms (Views: 298.8ms | ActiveRecord: 0.0ms | Allocations: 7862)
+
+
+Started GET "/" for ::1 at 2021-08-21 13:35:39 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.7ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 309.0ms | Allocations: 1606)
+Completed 200 OK in 314ms (Views: 312.6ms | ActiveRecord: 0.0ms | Allocations: 1863)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 13:35:44 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 270.3ms | Allocations: 4442)
+  Rendered layout layouts/application.html.erb (Duration: 273.0ms | Allocations: 4513)
+Completed 500 Internal Server Error in 424ms (ActiveRecord: 22.8ms | Allocations: 9732)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Hash):
+    10:   </div>
+    11: 
+    12:   <p>Select a gift that already exists:</p>
+    13:     <%= f.collection_select(:recipient, :gift_id, Gift.all, :id, :name) %>
+    14: 
+    15:   <p>or create a new gift: </p>
+    16: 
+  
+app/views/recipients/new.html.erb:13
+app/views/recipients/new.html.erb:5
