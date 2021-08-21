@@ -4282,3 +4282,410 @@ Completed 200 OK in 423ms (Views: 312.8ms | ActiveRecord: 10.5ms | Allocations: 
   [1m[36mRecipient Load (3.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" INNER JOIN "gifts" ON "recipients"."id" = "gifts"."recipient_id" WHERE "gifts"."giver_id" = ? /* loading for inspect */ LIMIT ?[0m  [["giver_id", 4], ["LIMIT", 11]]
   [1m[36mGiver Load (3.5ms)[0m  [1m[34mSELECT "givers".* FROM "givers" INNER JOIN "gifts" ON "givers"."id" = "gifts"."giver_id" WHERE "gifts"."recipient_id" = ? /* loading for inspect */ LIMIT ?[0m  [["recipient_id", 1], ["LIMIT", 11]]
   [1m[36mGiver Load (3.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" INNER JOIN "gifts" ON "givers"."id" = "gifts"."giver_id" WHERE "gifts"."recipient_id" = ? /* loading for inspect */ LIMIT ?[0m  [["recipient_id", 2], ["LIMIT", 11]]
+Started GET "/recipients/2" for ::1 at 2021-08-21 16:00:57 -0500
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipient Load (4.0ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 24.1ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 500.9ms | Allocations: 4758)
+Completed 200 OK in 747ms (Views: 564.2ms | ActiveRecord: 18.0ms | Allocations: 13273)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2021-08-21 16:01:02 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Started GET "/" for 127.0.0.1 at 2021-08-21 16:01:03 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 26.0ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 429.9ms | Allocations: 1754)
+Completed 200 OK in 504ms (Views: 455.0ms | ActiveRecord: 0.0ms | Allocations: 2534)
+
+
+Started GET "/login" for ::1 at 2021-08-21 16:01:07 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 186.7ms | Allocations: 4416)
+  Rendered layout layouts/application.html.erb (Duration: 276.5ms | Allocations: 5830)
+Completed 200 OK in 294ms (Views: 278.0ms | ActiveRecord: 0.0ms | Allocations: 6189)
+
+
+Started POST "/login" for ::1 at 2021-08-21 16:01:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"batman@batman.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (8.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "batman@batman.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/givers/4
+Completed 302 Found in 449ms (ActiveRecord: 38.7ms | Allocations: 5782)
+
+
+Started GET "/givers/4" for ::1 at 2021-08-21 16:01:20 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGiver Load (2.9ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 153)
+  Rendered layout layouts/application.html.erb (Duration: 98.6ms | Allocations: 1690)
+Completed 200 OK in 129ms (Views: 106.6ms | ActiveRecord: 2.9ms | Allocations: 3173)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:01:34 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  Rendered recipients/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 155.1ms | Allocations: 1653)
+Completed 200 OK in 173ms (Views: 156.8ms | ActiveRecord: 0.0ms | Allocations: 2035)
+
+
+Started GET "/recipients/1" for 127.0.0.1 at 2021-08-21 16:01:44 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipient Load (2.4ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 118.2ms | Allocations: 1569)
+Completed 200 OK in 125ms (Views: 119.5ms | ActiveRecord: 2.4ms | Allocations: 2376)
+
+
+Started GET "/recipients/2" for 127.0.0.1 at 2021-08-21 16:01:48 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipient Load (3.0ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 140.2ms | Allocations: 1570)
+Completed 200 OK in 147ms (Views: 141.7ms | ActiveRecord: 3.0ms | Allocations: 2391)
+
+
+Started GET "/gifts" for ::1 at 2021-08-21 16:01:55 -0500
+Processing by GiftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/index.html.erb within layouts/application
+  Rendered gifts/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 98.4ms | Allocations: 1658)
+Completed 200 OK in 120ms (Views: 105.9ms | ActiveRecord: 0.0ms | Allocations: 2432)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2021-08-21 16:02:01 -0500
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/show.html.erb within layouts/application
+  Rendered gifts/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 155.1ms | Allocations: 1653)
+Completed 200 OK in 173ms (Views: 156.7ms | ActiveRecord: 0.0ms | Allocations: 2030)
+
+
+Started GET "/gifts/edit" for 127.0.0.1 at 2021-08-21 16:02:07 -0500
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/show.html.erb within layouts/application
+  Rendered gifts/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 207.2ms | Allocations: 1566)
+Completed 200 OK in 211ms (Views: 210.0ms | ActiveRecord: 0.0ms | Allocations: 1819)
+
+
+Started GET "/gifts/edit" for 127.0.0.1 at 2021-08-21 16:02:08 -0500
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/show.html.erb within layouts/application
+  Rendered gifts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+  Rendered layout layouts/application.html.erb (Duration: 145.0ms | Allocations: 1567)
+Completed 200 OK in 147ms (Views: 146.5ms | ActiveRecord: 0.0ms | Allocations: 1821)
+
+
+Started GET "/gifts/new" for ::1 at 2021-08-21 16:02:13 -0500
+Processing by GiftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 152.2ms | Allocations: 1658)
+Completed 200 OK in 173ms (Views: 154.1ms | ActiveRecord: 0.0ms | Allocations: 2033)
+
+
+Started GET "/recipient/new" for ::1 at 2021-08-21 16:02:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/recipient/new"):
+  
+Started GET "/recipient/new" for ::1 at 2021-08-21 16:02:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/recipient/new"):
+  
+Started GET "/recipients/new" for ::1 at 2021-08-21 16:02:37 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 880)
+  Rendered layout layouts/application.html.erb (Duration: 148.9ms | Allocations: 2391)
+Completed 200 OK in 168ms (Views: 150.6ms | ActiveRecord: 0.0ms | Allocations: 2887)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 16:05:26 -0500
+  [1m[35m (20.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 294.3ms | Allocations: 2955)
+  Rendered layout layouts/application.html.erb (Duration: 1511.6ms | Allocations: 7021)
+Completed 200 OK in 2009ms (Views: 1657.6ms | ActiveRecord: 33.1ms | Allocations: 14490)
+
+
+Started GET "/recipients/Show%20all%20recipients" for ::1 at 2021-08-21 16:05:33 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"Show all recipients"}
+  [1m[36mRecipient Load (8.4ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 32.4ms | Allocations: 1744)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 1815)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 8.4ms | Allocations: 3240)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: This shows a singular recipient and their associated gifts.
+    2: 
+    3: <p>
+    4: <%= @recipient.name %>
+    5: </p>
+  
+app/views/recipients/show.html.erb:4
+Started GET "/recipients/new" for ::1 at 2021-08-21 16:08:53 -0500
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 84.0ms | Allocations: 2934)
+  Rendered layout layouts/application.html.erb (Duration: 416.0ms | Allocations: 7033)
+Completed 200 OK in 569ms (Views: 448.5ms | ActiveRecord: 11.4ms | Allocations: 14388)
+
+
+Started GET "/recipients/Show%20all%20recipients" for ::1 at 2021-08-21 16:08:59 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"Show all recipients"}
+  [1m[36mRecipient Load (3.4ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 19.8ms | Allocations: 1682)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 1753)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 3.4ms | Allocations: 4976)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: This shows a singular recipient and their associated gifts.
+    2: 
+    3: <p>
+    4: <%= @recipient.name %>
+    5: </p>
+  
+app/views/recipients/show.html.erb:4
+Started GET "/rails/routes" for ::1 at 2021-08-21 16:11:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/rails/routes"):
+  
+Started GET "/show/rails/routes" for ::1 at 2021-08-21 16:11:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/show/rails/routes"):
+  
+Started GET "/recipients/new" for ::1 at 2021-08-21 16:14:11 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 618)
+  Rendered layout layouts/application.html.erb (Duration: 413.0ms | Allocations: 2133)
+Completed 200 OK in 419ms (Views: 417.4ms | ActiveRecord: 0.0ms | Allocations: 2505)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 16:16:11 -0500
+  [1m[35m (21.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 291.5ms | Allocations: 2951)
+  Rendered layout layouts/application.html.erb (Duration: 1394.8ms | Allocations: 7038)
+Completed 200 OK in 1848ms (Views: 1525.3ms | ActiveRecord: 33.3ms | Allocations: 14431)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:16:25 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (10.5ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 39.8ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 446.4ms | Allocations: 2657)
+Completed 200 OK in 500ms (Views: 440.0ms | ActiveRecord: 10.5ms | Allocations: 3085)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:17:13 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (8.8ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 420.3ms | Allocations: 2411)
+Completed 200 OK in 426ms (Views: 416.0ms | ActiveRecord: 8.8ms | Allocations: 2685)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:17:42 -0500
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (2.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 38.9ms | Allocations: 3744)
+  Rendered layout layouts/application.html.erb (Duration: 413.0ms | Allocations: 8274)
+Completed 200 OK in 541ms (Views: 431.5ms | ActiveRecord: 13.2ms | Allocations: 13283)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:19:10 -0500
+  [1m[35m (35.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (10.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 137.9ms | Allocations: 4766)
+  Rendered layout layouts/application.html.erb (Duration: 141.7ms | Allocations: 4893)
+Completed 500 Internal Server Error in 635ms (ActiveRecord: 46.8ms | Allocations: 9995)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recipients"}, missing required keys: [:id]):
+    2: 
+    3: <ul>
+    4: <%= @recipients.each do |r| %>
+    5:     <li><%= link_to "#{r.name}", recipient_path %></li>
+    6: <% end %>
+    7: </ul>
+  
+app/views/recipients/index.html.erb:5
+app/views/recipients/index.html.erb:4
+Started GET "/recipients" for ::1 at 2021-08-21 16:20:50 -0500
+  [1m[35m (34.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (8.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 105.8ms | Allocations: 3720)
+  Rendered layout layouts/application.html.erb (Duration: 1370.1ms | Allocations: 8173)
+Completed 200 OK in 1832ms (Views: 1458.0ms | ActiveRecord: 35.6ms | Allocations: 13183)
+
+
+Started GET "/recipients/1" for ::1 at 2021-08-21 16:20:56 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipient Load (3.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 157.2ms | Allocations: 1686)
+Completed 200 OK in 199ms (Views: 159.2ms | ActiveRecord: 3.3ms | Allocations: 3115)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:20:59 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (8.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 895)
+  Rendered layout layouts/application.html.erb (Duration: 335.6ms | Allocations: 2412)
+Completed 200 OK in 339ms (Views: 330.0ms | ActiveRecord: 8.7ms | Allocations: 2686)
+
+
+Started GET "/recipients/2" for ::1 at 2021-08-21 16:21:01 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipient Load (9.6ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 409.0ms | Allocations: 1570)
+Completed 200 OK in 433ms (Views: 414.5ms | ActiveRecord: 9.6ms | Allocations: 2390)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:21:08 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (6.8ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 885)
+  Rendered layout layouts/application.html.erb (Duration: 143.1ms | Allocations: 2401)
+Completed 200 OK in 146ms (Views: 138.4ms | ActiveRecord: 6.8ms | Allocations: 2666)
+
+
+Started GET "/recipients" for 127.0.0.1 at 2021-08-21 16:23:36 -0500
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (9.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 350.4ms | Allocations: 6591)
+  Rendered layout layouts/application.html.erb (Duration: 1658.4ms | Allocations: 10838)
+Completed 200 OK in 2096ms (Views: 1743.6ms | ActiveRecord: 41.9ms | Allocations: 15915)
+
+
+Started GET "/recipients" for 127.0.0.1 at 2021-08-21 16:24:28 -0500
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (3.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 144.1ms | Allocations: 7643)
+  Rendered layout layouts/application.html.erb (Duration: 1294.7ms | Allocations: 12026)
+Completed 200 OK in 1458ms (Views: 1324.2ms | ActiveRecord: 21.3ms | Allocations: 17134)
+
+
+Started GET "/recipients" for 127.0.0.1 at 2021-08-21 16:25:53 -0500
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (3.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:4
+  Rendered recipients/index.html.erb within layouts/application (Duration: 139.3ms | Allocations: 7658)
+  Rendered layout layouts/application.html.erb (Duration: 481.4ms | Allocations: 11977)
+Completed 200 OK in 647ms (Views: 504.7ms | ActiveRecord: 22.3ms | Allocations: 17116)
+
+

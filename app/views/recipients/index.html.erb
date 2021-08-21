@@ -1,1 +1,6 @@
-This iterates over all recipients and shows them with their associated gifts.
+
+<ul>
+<%= @recipients.each do |r| %>
+    <li><%= link_to "#{r.name}", recipient_path(r.id) %> || <%= "#{r.gifts.all}"%></li>
+<% end %>
+</ul>

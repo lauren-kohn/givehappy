@@ -16,6 +16,7 @@ class RecipientsController < ApplicationController
     end 
     
     def index
+        @recipients = Recipient.all
     end 
 
     def show
