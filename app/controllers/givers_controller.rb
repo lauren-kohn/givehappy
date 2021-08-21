@@ -10,8 +10,7 @@ class GiversController < ApplicationController
             session[:giver_id] = @giver.id 
             redirect_to giver_path(@giver) 
         else 
-            render :new
-            #flash.now[:error] = "Please complete all fields."
+            render :new, alert: "Some of the information provided may be missing or incorrect. Please try again."
         end
     end 
 
