@@ -4226,3 +4226,59 @@ Processing by RecipientsController#show as HTML
 Completed 200 OK in 452ms (Views: 316.1ms | ActiveRecord: 12.8ms | Allocations: 13102)
 
 
+Started GET "/recipients/2" for ::1 at 2021-08-21 14:41:38 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipient Load (7.9ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 321.4ms | Allocations: 1570)
+Completed 200 OK in 340ms (Views: 324.9ms | ActiveRecord: 7.9ms | Allocations: 2393)
+
+
+Started GET "/recipients/2" for 127.0.0.1 at 2021-08-21 14:42:06 -0500
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipient Load (2.5ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:22:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 280.1ms | Allocations: 4818)
+Completed 200 OK in 423ms (Views: 312.8ms | ActiveRecord: 10.5ms | Allocations: 13340)
+
+
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRecipient Load (2.5ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRecipient Load (3.2ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" ORDER BY "recipients"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipient Load (2.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" ORDER BY "recipients"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGiver Load (1.8ms)[0m  [1m[34mSELECT "givers".* FROM "givers" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mGiver Load (2.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGift Load (2.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."giver_id" = ? /* loading for inspect */ LIMIT ?[0m  [["giver_id", 4], ["LIMIT", 11]]
+  [1m[36mGift Load (3.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiver Load (2.8ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRecipient Load (0.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "pants"], ["LIMIT", 1]]
+  [1m[36mGift Create (9.5ms)[0m  [1m[32mINSERT INTO "gifts" ("giver_id", "recipient_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["giver_id", 4], ["recipient_id", 2], ["name", "pants"], ["created_at", "2021-08-21 19:48:59.647309"], ["updated_at", "2021-08-21 19:48:59.647309"]]
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGift Load (3.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."giver_id" = ? /* loading for inspect */ LIMIT ?[0m  [["giver_id", 4], ["LIMIT", 11]]
+  [1m[36mGift Load (3.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ? /* loading for inspect */ LIMIT ?[0m  [["recipient_id", 2], ["LIMIT", 11]]
+  [1m[36mRecipient Load (2.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" ORDER BY "recipients"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiver Load (2.9ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRecipient Load (0.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGift Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "gifts" WHERE "gifts"."name" = ? LIMIT ?[0m  [["name", "vacuum"], ["LIMIT", 1]]
+  [1m[36mGift Create (9.5ms)[0m  [1m[32mINSERT INTO "gifts" ("giver_id", "recipient_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["giver_id", 4], ["recipient_id", 1], ["name", "vacuum"], ["created_at", "2021-08-21 19:50:47.735712"], ["updated_at", "2021-08-21 19:50:47.735712"]]
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGift Load (2.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."giver_id" = ? /* loading for inspect */ LIMIT ?[0m  [["giver_id", 4], ["LIMIT", 11]]
+  [1m[36mRecipient Load (3.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" INNER JOIN "gifts" ON "recipients"."id" = "gifts"."recipient_id" WHERE "gifts"."giver_id" = ? /* loading for inspect */ LIMIT ?[0m  [["giver_id", 4], ["LIMIT", 11]]
+  [1m[36mGiver Load (3.5ms)[0m  [1m[34mSELECT "givers".* FROM "givers" INNER JOIN "gifts" ON "givers"."id" = "gifts"."giver_id" WHERE "gifts"."recipient_id" = ? /* loading for inspect */ LIMIT ?[0m  [["recipient_id", 1], ["LIMIT", 11]]
+  [1m[36mGiver Load (3.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" INNER JOIN "gifts" ON "givers"."id" = "gifts"."giver_id" WHERE "gifts"."recipient_id" = ? /* loading for inspect */ LIMIT ?[0m  [["recipient_id", 2], ["LIMIT", 11]]
