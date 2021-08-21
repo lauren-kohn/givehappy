@@ -1,5 +1,14 @@
 This needs a partial
 
+<% if @giver.errors.any? %>
+  <ul>
+  <% @giver.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
 <h1>Sign Up</h1>
 
 <%= form_for(@giver) do |f| %>

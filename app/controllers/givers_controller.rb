@@ -8,9 +8,9 @@ class GiversController < ApplicationController
         @giver = Giver.new(giver_params)
         if @giver.save
             session[:giver_id] = @giver.id 
-            redirect_to giver_path(@giver) 
+            redirect_to giver_path(@giver)
         else 
-            render :new, alert: "Some of the information provided may be missing or incorrect. Please try again."
+            render :new
         end
     end 
 

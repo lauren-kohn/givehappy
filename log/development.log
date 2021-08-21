@@ -3142,3 +3142,505 @@ Processing by GiversController#create as HTML
 Completed 200 OK in 219ms (Views: 45.5ms | ActiveRecord: 2.1ms | Allocations: 7154)
 
 
+Started POST "/givers" for ::1 at 2021-08-20 19:11:23 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Create (2.9ms)[0m  [1m[32mINSERT INTO "givers" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Garfield"], ["email", "garfield2@garfield.com"], ["password_digest", "$2a$12$dr6M2VS.Ao2WjB/3kgi2KeVwAYxhsr7kK3yBCfL7aEErEPTVUXfPq"], ["created_at", "2021-08-21 00:11:24.320033"], ["updated_at", "2021-08-21 00:11:24.320033"]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+Redirected to http://localhost:3000/givers/5
+Completed 302 Found in 239ms (ActiveRecord: 14.5ms | Allocations: 10946)
+
+
+Started GET "/givers/5" for ::1 at 2021-08-20 19:11:24 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGiver Load (1.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 304)
+  Rendered layout layouts/application.html.erb (Duration: 164.4ms | Allocations: 4872)
+Completed 200 OK in 204ms (Views: 182.8ms | ActiveRecord: 1.0ms | Allocations: 7517)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 19:11:30 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 36.9ms | Allocations: 3064)
+  Rendered layout layouts/application.html.erb (Duration: 73.6ms | Allocations: 4445)
+Completed 200 OK in 82ms (Views: 74.4ms | ActiveRecord: 0.0ms | Allocations: 4845)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 19:11:34 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2025)
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 3405)
+Completed 200 OK in 55ms (Views: 48.4ms | ActiveRecord: 1.6ms | Allocations: 6631)
+
+
+Started DELETE "/logout" for ::1 at 2021-08-20 19:11:47 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 293)
+
+
+Started GET "/" for ::1 at 2021-08-20 19:11:47 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.1ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 1728)
+Completed 200 OK in 52ms (Views: 47.0ms | ActiveRecord: 0.0ms | Allocations: 2508)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 19:11:55 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 868)
+  Rendered layout layouts/application.html.erb (Duration: 48.5ms | Allocations: 2248)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.0ms | Allocations: 2523)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 19:12:20 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1894)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 3273)
+Completed 200 OK in 55ms (Views: 47.3ms | ActiveRecord: 1.4ms | Allocations: 6482)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 19:12:33 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 859)
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 2237)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.0ms | Allocations: 2506)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 19:12:40 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1318)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 2698)
+Completed 200 OK in 218ms (Views: 45.8ms | ActiveRecord: 2.0ms | Allocations: 5934)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 19:12:46 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1894)
+  Rendered layout layouts/application.html.erb (Duration: 51.0ms | Allocations: 3272)
+Completed 200 OK in 59ms (Views: 51.7ms | ActiveRecord: 1.9ms | Allocations: 6466)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 19:12:48 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1894)
+  Rendered layout layouts/application.html.erb (Duration: 47.0ms | Allocations: 3273)
+Completed 200 OK in 55ms (Views: 48.0ms | ActiveRecord: 1.5ms | Allocations: 6468)
+
+
+Started GET "/" for ::1 at 2021-08-20 20:30:10 -0500
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 6.0ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 156.6ms | Allocations: 4804)
+Completed 200 OK in 204ms (Views: 173.9ms | ActiveRecord: 0.0ms | Allocations: 7835)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:30:13 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 37.8ms | Allocations: 3076)
+  Rendered layout layouts/application.html.erb (Duration: 80.0ms | Allocations: 4459)
+Completed 200 OK in 110ms (Views: 82.9ms | ActiveRecord: 4.1ms | Allocations: 10981)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:30:31 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 2.0ms | Allocations: 5543)
+
+
+  
+NoMethodError (undefined method `new_url' for #<GiversController:0x0055b94cf66020>
+Did you mean?  new_gift_url):
+  
+app/controllers/givers_controller.rb:13:in `create'
+Started GET "/" for ::1 at 2021-08-20 20:31:25 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 6.7ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 160.6ms | Allocations: 4821)
+Completed 200 OK in 210ms (Views: 179.1ms | ActiveRecord: 0.0ms | Allocations: 7829)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:31:27 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 36.4ms | Allocations: 3076)
+  Rendered layout layouts/application.html.erb (Duration: 78.0ms | Allocations: 4459)
+Completed 200 OK in 105ms (Views: 80.8ms | ActiveRecord: 4.0ms | Allocations: 10981)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:31:39 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+Redirected to http://localhost:3000/new
+Completed 302 Found in 175ms (ActiveRecord: 1.3ms | Allocations: 3749)
+
+
+Started GET "/new" for ::1 at 2021-08-20 20:31:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/" for ::1 at 2021-08-20 20:32:09 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.3ms | Allocations: 109)
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | Allocations: 1746)
+Completed 200 OK in 66ms (Views: 65.9ms | ActiveRecord: 0.0ms | Allocations: 2077)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:32:11 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 2317)
+Completed 200 OK in 50ms (Views: 50.1ms | ActiveRecord: 0.0ms | Allocations: 2613)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:32:19 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+Redirected to http://localhost:3000/new
+Completed 302 Found in 170ms (ActiveRecord: 2.0ms | Allocations: 3264)
+
+
+Started GET "/new" for ::1 at 2021-08-20 20:32:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/" for ::1 at 2021-08-20 20:32:43 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 6.2ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 155.5ms | Allocations: 4816)
+Completed 200 OK in 201ms (Views: 173.1ms | ActiveRecord: 0.0ms | Allocations: 7847)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:32:45 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 40.0ms | Allocations: 3076)
+  Rendered layout layouts/application.html.erb (Duration: 85.0ms | Allocations: 4459)
+Completed 200 OK in 117ms (Views: 89.9ms | ActiveRecord: 3.6ms | Allocations: 10981)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:32:58 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+Redirected to http://localhost:3000/givers/new
+Completed 302 Found in 177ms (ActiveRecord: 2.0ms | Allocations: 3749)
+
+
+Started GET "/givers/new" for ::1 at 2021-08-20 20:32:58 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 867)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 2248)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.0ms | Allocations: 2518)
+
+
+Started GET "/" for ::1 at 2021-08-20 20:34:01 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 9.3ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 154.0ms | Allocations: 4813)
+Completed 200 OK in 197ms (Views: 169.5ms | ActiveRecord: 0.0ms | Allocations: 7819)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:34:04 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 39.0ms | Allocations: 3071)
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 4453)
+Completed 200 OK in 113ms (Views: 83.5ms | ActiveRecord: 4.1ms | Allocations: 10974)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:34:12 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 15ms (ActiveRecord: 1.5ms | Allocations: 3749)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:34:12 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 868)
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 2251)
+Completed 200 OK in 49ms (Views: 48.6ms | ActiveRecord: 0.0ms | Allocations: 2522)
+
+
+Started GET "/" for ::1 at 2021-08-20 20:38:38 -0500
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 6.7ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 154.3ms | Allocations: 4804)
+Completed 200 OK in 201ms (Views: 172.6ms | ActiveRecord: 0.0ms | Allocations: 7835)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:38:42 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 42.1ms | Allocations: 3076)
+  Rendered layout layouts/application.html.erb (Duration: 84.4ms | Allocations: 4459)
+Completed 200 OK in 114ms (Views: 87.6ms | ActiveRecord: 4.1ms | Allocations: 10981)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:38:49 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2026)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 3406)
+Completed 200 OK in 48ms (Views: 38.7ms | ActiveRecord: 1.2ms | Allocations: 7275)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:39:40 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1894)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | Allocations: 3272)
+Completed 200 OK in 61ms (Views: 51.9ms | ActiveRecord: 1.1ms | Allocations: 6481)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:39:43 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1894)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 3272)
+Completed 200 OK in 51ms (Views: 40.2ms | ActiveRecord: 1.9ms | Allocations: 6472)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:39:46 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 859)
+  Rendered layout layouts/application.html.erb (Duration: 54.6ms | Allocations: 2239)
+Completed 200 OK in 64ms (Views: 63.6ms | ActiveRecord: 0.0ms | Allocations: 2517)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:39:50 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1894)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 3273)
+Completed 200 OK in 53ms (Views: 46.7ms | ActiveRecord: 1.6ms | Allocations: 6473)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:40:09 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 5.2ms | Allocations: 10659)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/givers_controller.rb:13:in `create'
+Started GET "/signup" for ::1 at 2021-08-20 20:41:56 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 68.4ms | Allocations: 5832)
+  Rendered layout layouts/application.html.erb (Duration: 211.2ms | Allocations: 9590)
+Completed 200 OK in 228ms (Views: 221.5ms | ActiveRecord: 0.0ms | Allocations: 10913)
+
+
+Started GET "/" for ::1 at 2021-08-20 20:46:35 -0500
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 5.5ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 140.7ms | Allocations: 4804)
+Completed 200 OK in 188ms (Views: 158.0ms | ActiveRecord: 0.0ms | Allocations: 7829)
+
+
+Started GET "/signup" for ::1 at 2021-08-20 20:46:38 -0500
+Processing by GiversController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 39.0ms | Allocations: 3172)
+  Rendered layout layouts/application.html.erb (Duration: 81.1ms | Allocations: 4555)
+Completed 200 OK in 112ms (Views: 84.2ms | ActiveRecord: 4.0ms | Allocations: 11077)
+
+
+Started POST "/givers" for ::1 at 2021-08-20 20:46:47 -0500
+Processing by GiversController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"name"=>"Garfield", "email"=>"garfield2@garfield.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mGiver Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "garfield2@garfield.com"], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/givers_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/new.html.erb within layouts/application
+  Rendered givers/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2844)
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 4224)
+Completed 200 OK in 63ms (Views: 52.0ms | ActiveRecord: 1.2ms | Allocations: 8085)
+
+
