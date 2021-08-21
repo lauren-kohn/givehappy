@@ -5004,3 +5004,51 @@ No template found for GiversController#update, rendering head :no_content
 Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 316)
 
 
+Started GET "/recipients" for ::1 at 2021-08-21 17:11:57 -0500
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (9.4ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (4.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (3.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 288.2ms | Allocations: 12807)
+  Rendered layout layouts/application.html.erb (Duration: 672.6ms | Allocations: 16971)
+Completed 200 OK in 1113ms (Views: 742.5ms | ActiveRecord: 61.9ms | Allocations: 21992)
+
+
+Started GET "/recipients/1" for ::1 at 2021-08-21 17:12:02 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipient Load (9.5ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 21.0ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 310.8ms | Allocations: 1681)
+Completed 200 OK in 380ms (Views: 313.8ms | ActiveRecord: 9.5ms | Allocations: 2808)
+
+
+Started GET "/recipients/1/edit" for ::1 at 2021-08-21 17:12:11 -0500
+Processing by RecipientsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipient Load (2.9ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/edit.html.erb within layouts/application
+  Rendered recipients/edit.html.erb within layouts/application (Duration: 176.5ms | Allocations: 4450)
+  Rendered layout layouts/application.html.erb (Duration: 295.5ms | Allocations: 5849)
+Completed 200 OK in 319ms (Views: 297.4ms | ActiveRecord: 2.9ms | Allocations: 6783)
+
+
+Started PATCH "/recipients/1" for ::1 at 2021-08-21 17:12:20 -0500
+Processing by RecipientsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>"Alfredo"}, "commit"=>"Edit Information", "id"=>"1"}
+No template found for RecipientsController#update, rendering head :no_content
+Completed 204 No Content in 64ms (ActiveRecord: 0.0ms | Allocations: 1561)
+
+

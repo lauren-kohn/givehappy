@@ -1,1 +1,12 @@
-This form edits a recipient (partial)
+<h2>Edit <%= @recipient.name %>'s information:</h2>
+
+<%= form_for(@recipient) do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <br>
+    <%= f.submit "Edit Information" %>
+
+<% end %>

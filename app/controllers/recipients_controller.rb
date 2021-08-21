@@ -24,6 +24,7 @@ class RecipientsController < ApplicationController
     end
 
     def edit 
+        @recipient = Recipient.find_by_id(params[:id])
     end
 
     def update
