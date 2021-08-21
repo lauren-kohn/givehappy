@@ -1,1 +1,21 @@
-This form creates a new gift not associated with a recipient (partial?).
+<% if @gift.errors.any? %>
+  <ul>
+  <% @gift.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<h1>Create a New Gift</h1>
+
+<%= form_for(@gift) do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <br>
+    <%= f.submit "Create Gift" %>
+
+<% end %>
