@@ -2,17 +2,25 @@ class RecipientsController < ApplicationController
 
     def new
         @recipient = Recipient.new
-        @recipient.build_gift
+        #@gift = @recipient.build_gift
     end
+
+    def create 
+        @recipient = Recipient.new(recipient_params)
+        #@recipient.giver_id = session[:giver_id]
+        if @recipient.save 
+            redirect_to recipient_path(@recipient)
+        else
+            render :new 
+        end
+    end 
     
     def index
     end 
 
     def show
+        @recipient = Recipient.find_by_id(params[:id])
     end
-    
-    def create 
-    end 
 
     def edit 
     end
@@ -26,7 +34,7 @@ class RecipientsController < ApplicationController
     private 
 
     def recipient_params
-        params.require(:recipient).permit(:name, :gift_attributes[:name])
+        params.require(:recipient).permit(:name)
     end
 
 end
