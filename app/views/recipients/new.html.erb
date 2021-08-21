@@ -1,5 +1,3 @@
-This form creates a new recipient (partial?)
-
 <h1>Add a new recipient!</h1>
 
 <%= form_for(@recipient) do |f| %>
@@ -15,3 +13,7 @@ This form creates a new recipient (partial?)
     <%= f.submit "Create Recipient" %>
 
 <% end %>
+
+<div>
+  <%= link_to "Show all recipients", recipients_path %>
+</div>
