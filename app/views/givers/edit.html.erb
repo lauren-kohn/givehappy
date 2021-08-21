@@ -1,1 +1,19 @@
 This needs a partial to edit the giver's info
+
+<h2>Edit <%= @giver.name %>'s information:</h2>
+
+<%= form_for(@giver) do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <br>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+    <br>
+    <%= f.submit "Edit Information" %>
+
+<% end %>

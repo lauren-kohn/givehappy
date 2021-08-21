@@ -19,11 +19,12 @@ class GiversController < ApplicationController
         redirect_to '/' if !@giver
     end
     
-    def index
-    end
-    
     def edit 
+        @giver = Giver.find_by_id(params[:id])
     end 
+
+    def update 
+    end
 
     private
 

@@ -4770,3 +4770,170 @@ Processing by RecipientsController#new as HTML
 Completed 200 OK in 319ms (Views: 317.3ms | ActiveRecord: 0.0ms | Allocations: 2190)
 
 
+Started GET "/giver/1" for ::1 at 2021-08-21 16:42:46 -0500
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/giver/1"):
+  
+Started GET "/givers/1" for ::1 at 2021-08-21 16:42:58 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGiver Load (3.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 224)
+  Rendered layout layouts/application.html.erb (Duration: 332.3ms | Allocations: 3605)
+Completed 200 OK in 467ms (Views: 353.2ms | ActiveRecord: 14.3ms | Allocations: 12470)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:43:04 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (10.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (11.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (8.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 478.7ms | Allocations: 11866)
+  Rendered layout layouts/application.html.erb (Duration: 888.9ms | Allocations: 13389)
+Completed 200 OK in 1022ms (Views: 812.0ms | ActiveRecord: 102.1ms | Allocations: 15611)
+
+
+Started GET "/givers/1" for ::1 at 2021-08-21 16:43:16 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGiver Load (9.0ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 76)
+  Rendered layout layouts/application.html.erb (Duration: 402.5ms | Allocations: 1597)
+Completed 200 OK in 423ms (Views: 407.2ms | ActiveRecord: 9.0ms | Allocations: 2405)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 16:43:24 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (7.5ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (7.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (7.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 42.8ms | Allocations: 2288)
+  Rendered layout layouts/application.html.erb (Duration: 367.4ms | Allocations: 3806)
+Completed 200 OK in 372ms (Views: 349.2ms | ActiveRecord: 21.9ms | Allocations: 4080)
+
+
+Started GET "/givers/1" for ::1 at 2021-08-21 16:43:29 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGiver Load (9.1ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 403.2ms | Allocations: 1590)
+Completed 200 OK in 425ms (Views: 407.6ms | ActiveRecord: 9.1ms | Allocations: 2396)
+
+
+Started GET "/givers/1/edit" for ::1 at 2021-08-21 16:48:14 -0500
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering givers/edit.html.erb within layouts/application
+  Rendered givers/edit.html.erb within layouts/application (Duration: 75.5ms | Allocations: 2026)
+  Rendered layout layouts/application.html.erb (Duration: 79.8ms | Allocations: 2118)
+Completed 500 Internal Server Error in 450ms (ActiveRecord: 0.0ms | Allocations: 5131)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: This needs a partial to edit the giver's info
+    2: 
+    3: <h2>Edit <%= @giver.name %>'s information:</h2>
+    4: 
+    5: <%= form_for(@giver) do |f| %>
+    6: 
+  
+app/views/givers/edit.html.erb:3
+Started GET "/givers/1/edit" for ::1 at 2021-08-21 16:56:24 -0500
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiversController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGiver Load (3.8ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/edit.html.erb within layouts/application
+  Rendered givers/edit.html.erb within layouts/application (Duration: 131.1ms | Allocations: 3265)
+  Rendered layout layouts/application.html.erb (Duration: 562.3ms | Allocations: 7265)
+Completed 200 OK in 781ms (Views: 615.6ms | ActiveRecord: 17.0ms | Allocations: 16894)
+
+
+Started PATCH "/givers/1" for ::1 at 2021-08-21 16:56:56 -0500
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for GiversController):
+  
+actionpack (6.1.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
