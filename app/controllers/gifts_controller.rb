@@ -5,6 +5,12 @@ class GiftsController < ApplicationController
     end
 
     def create 
+        @gift = Gift.new(gift_params)
+        if @gift.save
+            redirect_to gift_path(@gift)
+        else 
+            render :new
+        end
     end 
 
     def edit 
@@ -14,6 +20,7 @@ class GiftsController < ApplicationController
     end 
 
     def show
+        @gift = Gift.find_by_id(params[:id])
     end
     
     def update
@@ -25,6 +32,7 @@ class GiftsController < ApplicationController
     private 
 
     def gift_params
+        params.require(:gift).permit(:name)
     end
 
 end
