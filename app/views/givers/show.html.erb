@@ -1,9 +1,15 @@
 This shows a giver's information.
 
 Should have a link_to edit_giver_path
-Should have a link_to show all recipients
-Should have a link_to create new recipient
 
 <h1>Welcome, <%= @giver.name %>!</h1>
 
 <h3>You have signed in.</h3>
+
+<div>
+    <%= link_to "Show all recipients", recipients_path %>
+</div>
+
+<div>
+    <%= link_to "Edit giver information", edit_giver_path(@giver) %>
+</div>
