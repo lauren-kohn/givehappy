@@ -3783,3 +3783,60 @@ No template found for RecipientsController#create, rendering head :no_content
 Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
 
 
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:14:37 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 96.6ms | Allocations: 7245)
+  Rendered layout layouts/application.html.erb (Duration: 97.4ms | Allocations: 7372)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 3.2ms | Allocations: 14792)
+
+
+  
+ActionView::Template::Error (undefined method `gift_id' for #<Recipient id: nil, name: nil, created_at: nil, updated_at: nil>
+Did you mean?  gift_ids
+               gift_ids=):
+    10:   </div>
+    11: 
+    12:   <p>Select a gift that already exists:</p>
+    13:     <%= f.collection_select :gift_id, Gift.all, :id, :name %>
+    14: 
+    15:   <p>or create a new gift: </p>
+    16:   
+  
+app/views/recipients/new.html.erb:13
+app/views/recipients/new.html.erb:5
+Started GET "/" for ::1 at 2021-08-20 21:17:37 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 5.3ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 149.5ms | Allocations: 4874)
+Completed 200 OK in 195ms (Views: 166.4ms | ActiveRecord: 0.0ms | Allocations: 7887)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-20 21:17:39 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 57.9ms | Allocations: 4434)
+  Rendered layout layouts/application.html.erb (Duration: 58.4ms | Allocations: 4505)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 4.5ms | Allocations: 9722)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Hash):
+    10:   </div>
+    11: 
+    12:   <p>Select a gift that already exists:</p>
+    13:     <%= f.collection_select(:recipient, :gift_id, Gift.all, :id, :name) %>
+    14: 
+    15:   <p>or create a new gift: </p>
+    16: 
+  
+app/views/recipients/new.html.erb:13
+app/views/recipients/new.html.erb:5
