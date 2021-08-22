@@ -5843,3 +5843,236 @@ Processing by GiftsController#index as HTML
 Completed 200 OK in 782ms (Views: 646.1ms | ActiveRecord: 39.4ms | Allocations: 23116)
 
 
+Started GET "/" for ::1 at 2021-08-21 19:40:41 -0500
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 8.9ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 199.7ms | Allocations: 4863)
+Completed 200 OK in 270ms (Views: 228.6ms | ActiveRecord: 0.0ms | Allocations: 7957)
+
+
+Started GET "/login" for ::1 at 2021-08-21 19:40:45 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 47.5ms | Allocations: 2454)
+  Rendered layout layouts/application.html.erb (Duration: 89.1ms | Allocations: 3868)
+Completed 200 OK in 96ms (Views: 89.9ms | ActiveRecord: 0.0ms | Allocations: 4228)
+
+
+Started POST "/login" for ::1 at 2021-08-21 19:40:57 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "giver"=>{"email"=>"batman@batman.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mGiver Load (1.3ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."email" = ? LIMIT ?[0m  [["email", "batman@batman.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/givers/4
+Completed 302 Found in 231ms (ActiveRecord: 6.1ms | Allocations: 8863)
+
+
+Started GET "/givers/4" for ::1 at 2021-08-21 19:40:57 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGiver Load (1.2ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 245)
+  Rendered layout layouts/application.html.erb (Duration: 67.8ms | Allocations: 1765)
+Completed 200 OK in 82ms (Views: 71.8ms | ActiveRecord: 1.2ms | Allocations: 3262)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 19:40:59 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (1.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (2.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 108.3ms | Allocations: 12742)
+  Rendered layout layouts/application.html.erb (Duration: 164.5ms | Allocations: 14264)
+Completed 200 OK in 186ms (Views: 146.3ms | ActiveRecord: 22.2ms | Allocations: 16485)
+
+
+Started GET "/givers/4" for ::1 at 2021-08-21 19:41:05 -0500
+Processing by GiversController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGiver Load (1.4ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/show.html.erb within layouts/application
+  Rendered givers/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 1618)
+Completed 200 OK in 71ms (Views: 67.6ms | ActiveRecord: 1.4ms | Allocations: 2438)
+
+
+Started GET "/givers/4/edit" for ::1 at 2021-08-21 19:41:11 -0500
+Processing by GiversController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGiver Load (2.1ms)[0m  [1m[34mSELECT "givers".* FROM "givers" WHERE "givers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/givers_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering givers/edit.html.erb within layouts/application
+  Rendered givers/edit.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 75.5ms | Allocations: 2492)
+Completed 200 OK in 91ms (Views: 76.5ms | ActiveRecord: 2.1ms | Allocations: 3445)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 19:41:53 -0500
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (3.2ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (2.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (2.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (2.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 3114)
+  Rendered layout layouts/application.html.erb (Duration: 84.0ms | Allocations: 4634)
+Completed 200 OK in 85ms (Views: 75.3ms | ActiveRecord: 9.8ms | Allocations: 4899)
+
+
+Started GET "/recipients/1" for ::1 at 2021-08-21 19:41:58 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipient Load (2.0ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  Rendered recipients/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 72.3ms | Allocations: 1685)
+Completed 200 OK in 97ms (Views: 73.4ms | ActiveRecord: 2.0ms | Allocations: 2766)
+
+
+Started GET "/recipients/1/edit" for ::1 at 2021-08-21 19:42:01 -0500
+Processing by RecipientsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipient Load (1.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/edit.html.erb within layouts/application
+  Rendered recipients/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 792)
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | Allocations: 2191)
+Completed 200 OK in 68ms (Views: 58.9ms | ActiveRecord: 1.1ms | Allocations: 3119)
+
+
+Started PATCH "/recipients/1" for ::1 at 2021-08-21 19:42:08 -0500
+Processing by RecipientsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipient"=>{"name"=>"Alfredo"}, "commit"=>"Edit Information", "id"=>"1"}
+No template found for RecipientsController#update, rendering head :no_content
+Completed 204 No Content in 10ms (ActiveRecord: 0.0ms | Allocations: 1546)
+
+
+Started GET "/gifts" for ::1 at 2021-08-21 19:42:21 -0500
+Processing by GiftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/index.html.erb within layouts/application
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/views/gifts/index.html.erb:2
+  [1m[36mRecipient Load (2.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mRecipient Load (1.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mRecipient Load (1.2ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mCACHE Recipient Load (0.0ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mCACHE Recipient Load (0.0ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  Rendered gifts/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 4854)
+  Rendered layout layouts/application.html.erb (Duration: 81.0ms | Allocations: 6388)
+Completed 200 OK in 98ms (Views: 80.1ms | ActiveRecord: 6.1ms | Allocations: 7174)
+
+
+Started GET "/recipients" for ::1 at 2021-08-21 20:12:41 -0500
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (1.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (1.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 84.1ms | Allocations: 13771)
+  Rendered layout layouts/application.html.erb (Duration: 285.7ms | Allocations: 18073)
+Completed 200 OK in 366ms (Views: 292.9ms | ActiveRecord: 15.1ms | Allocations: 23269)
+
+
+Started GET "/recipients/1" for ::1 at 2021-08-21 20:12:46 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipient Load (2.2ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  [1m[36mGift Load (2.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/show.html.erb:8
+  Rendered recipients/show.html.erb within layouts/application (Duration: 12.7ms | Allocations: 962)
+  Rendered layout layouts/application.html.erb (Duration: 77.3ms | Allocations: 2498)
+Completed 200 OK in 99ms (Views: 76.3ms | ActiveRecord: 4.8ms | Allocations: 3625)
+
+
+Started GET "/recipients/3" for ::1 at 2021-08-21 20:12:55 -0500
+Processing by RecipientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipient Load (1.9ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipients_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/show.html.erb within layouts/application
+  [1m[36mGift Load (2.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/show.html.erb:8
+  Rendered recipients/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 819)
+  Rendered layout layouts/application.html.erb (Duration: 86.6ms | Allocations: 2345)
+Completed 200 OK in 93ms (Views: 85.4ms | ActiveRecord: 4.0ms | Allocations: 3166)
+
+
+Started GET "/gifts" for ::1 at 2021-08-21 20:13:24 -0500
+Processing by GiftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/index.html.erb within layouts/application
+  [1m[36mGift Load (2.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/views/gifts/index.html.erb:2
+  [1m[36mRecipient Load (1.7ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mRecipient Load (1.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mRecipient Load (2.1ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mCACHE Recipient Load (0.0ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  [1m[36mCACHE Recipient Load (0.0ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gifts/index.html.erb:3
+  Rendered gifts/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 4862)
+  Rendered layout layouts/application.html.erb (Duration: 75.0ms | Allocations: 6398)
+Completed 200 OK in 91ms (Views: 73.3ms | ActiveRecord: 7.0ms | Allocations: 7195)
+
+
+Started GET "/gifts/1" for ::1 at 2021-08-21 20:13:35 -0500
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:26:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering gifts/show.html.erb within layouts/application
+  [1m[36mRecipient Load (2.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients" WHERE "recipients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/gifts/show.html.erb:4
+  Rendered gifts/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 915)
+  Rendered layout layouts/application.html.erb (Duration: 83.8ms | Allocations: 2451)
+Completed 200 OK in 96ms (Views: 83.7ms | ActiveRecord: 3.8ms | Allocations: 3553)
+
+

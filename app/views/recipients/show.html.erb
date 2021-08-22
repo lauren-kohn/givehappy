@@ -1,5 +1,7 @@
-This shows a singular recipient and their associated gifts.
+<h1><%= @recipient.name %> will receive: </h1>
 
-<p>
-<%= @recipient.name %>
-</p>
+<ul>
+<% @recipient.gifts.each do |gift| %>
+    <li><%= gift.name %></li>
+<% end %>
+</ul>
