@@ -6076,3 +6076,152 @@ Processing by GiftsController#show as HTML
 Completed 200 OK in 96ms (Views: 83.7ms | ActiveRecord: 3.8ms | Allocations: 3553)
 
 
+Started GET "/recipients" for ::1 at 2021-08-21 20:21:33 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (1.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (1.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 89.8ms | Allocations: 13730)
+  Rendered layout layouts/application.html.erb (Duration: 294.5ms | Allocations: 18027)
+Completed 200 OK in 370ms (Views: 304.6ms | ActiveRecord: 15.0ms | Allocations: 23224)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 20:21:39 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 50.8ms | Allocations: 5143)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 5214)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms | Allocations: 5611)
+
+
+  
+ActionView::Template::Error (undefined method `gift_id' for #<Recipient id: nil, name: nil, created_at: nil, updated_at: nil>
+Did you mean?  gift_ids
+               gift_ids=):
+     9: 
+    10:   <p>Plan a gift for this recipient:</p>
+    11:   <div>
+    12:     <%= f.collection_select :gift_id, Gift.all, :id, :name %>
+    13:   </div>
+    14:   <br>
+    15:     <%= f.submit "Create Recipient" %>
+  
+app/views/recipients/new.html.erb:12
+app/views/recipients/new.html.erb:3
+Started GET "/recipients" for ::1 at 2021-08-21 20:26:43 -0500
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms | Allocations: 7042)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x00007fd72c011520>
+Did you mean?  attr_accessor):
+  
+app/models/recipient.rb:9:in `<class:Recipient>'
+app/models/recipient.rb:1:in `<main>'
+app/controllers/recipients_controller.rb:19:in `index'
+Started GET "/recipients" for ::1 at 2021-08-21 20:27:27 -0500
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (1.3ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 95.8ms | Allocations: 13767)
+  Rendered layout layouts/application.html.erb (Duration: 280.4ms | Allocations: 18000)
+Completed 200 OK in 377ms (Views: 285.6ms | ActiveRecord: 17.2ms | Allocations: 23334)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 20:27:34 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 53.2ms | Allocations: 3532)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 3603)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms | Allocations: 4000)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Hash):
+     9: 
+    10:   <p>Plan a gift for this recipient:</p>
+    11:   <div>
+    12:     <%= f.collection_select :recipient, :gift_id, Gift.all, :id, :name %>
+    13:   </div>
+    14:   <br>
+    15:     <%= f.submit "Create Recipient" %>
+  
+app/views/recipients/new.html.erb:12
+app/views/recipients/new.html.erb:3
+Started GET "/recipients" for ::1 at 2021-08-21 20:29:14 -0500
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/index.html.erb within layouts/application
+  [1m[36mRecipient Load (1.4ms)[0m  [1m[34mSELECT "recipients".* FROM "recipients"[0m
+  ↳ app/views/recipients/index.html.erb:3
+  [1m[36mGift Load (1.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 1]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 2]]
+  ↳ app/views/recipients/index.html.erb:5
+  [1m[36mGift Load (1.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" WHERE "gifts"."recipient_id" = ?[0m  [["recipient_id", 3]]
+  ↳ app/views/recipients/index.html.erb:5
+  Rendered recipients/index.html.erb within layouts/application (Duration: 97.1ms | Allocations: 13786)
+  Rendered layout layouts/application.html.erb (Duration: 299.7ms | Allocations: 18088)
+Completed 200 OK in 377ms (Views: 303.4ms | ActiveRecord: 20.1ms | Allocations: 23280)
+
+
+Started GET "/recipients/new" for ::1 at 2021-08-21 20:29:22 -0500
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  Rendered recipients/new.html.erb within layouts/application (Duration: 42.4ms | Allocations: 3530)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 3601)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 3998)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Hash):
+     9: 
+    10:   <p>Plan a gift for this recipient:</p>
+    11:   <div>
+    12:     <%= f.collection_select :recipient, :gift_ids, Gift.all, :id, :name %>
+    13:   </div>
+    14:   <br>
+    15:     <%= f.submit "Create Recipient" %>
+  
+app/views/recipients/new.html.erb:12
+app/views/recipients/new.html.erb:3
+Started GET "/recipients/new" for ::1 at 2021-08-21 20:30:40 -0500
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipients/new.html.erb within layouts/application
+  [1m[36mGift Load (1.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/views/recipients/new.html.erb:12
+  Rendered recipients/new.html.erb within layouts/application (Duration: 100.4ms | Allocations: 8236)
+  Rendered layout layouts/application.html.erb (Duration: 290.6ms | Allocations: 12310)
+Completed 200 OK in 380ms (Views: 305.1ms | ActiveRecord: 13.7ms | Allocations: 19821)
+
+

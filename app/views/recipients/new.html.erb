@@ -7,8 +7,10 @@
     <%= f.text_field :name %>
   </div>
 
-
-
+  <p>Plan a gift for this recipient:</p>
+  <div>
+    <%= f.collection_select :gift_ids, Gift.all, :id, :name %>
+  </div>
   <br>
     <%= f.submit "Create Recipient" %>
 
