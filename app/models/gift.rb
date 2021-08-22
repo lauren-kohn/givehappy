@@ -5,4 +5,6 @@ class Gift < ActiveRecord::Base
 
     validates :name, uniqueness: true, presence: true 
 
+    accepts_nested_attributes_for :recipient
+
 end

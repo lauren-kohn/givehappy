@@ -7,6 +7,7 @@ class GiftsController < ApplicationController
     def create 
         @gift = Gift.new(gift_params)
         @gift.giver_id = session[:giver_id]
+        @gift.recipient_id = params[:gift][:recipient_id]
         if @gift.save
             redirect_to gift_path(@gift)
         else 
@@ -33,7 +34,7 @@ class GiftsController < ApplicationController
     private 
 
     def gift_params
-        params.require(:gift).permit(:name)
+        params.require(:gift).permit(:name, :recipient_id)
     end
 
 end
