@@ -1,1 +1,5 @@
-This iterates over gifts.all and displays their name and associated recipients.
+<ul>
+<% @gifts.all.each do |gift| %>
+    <li><%= gift.name %> || <%= gift.recipient.name %></li>
+<% end %>
+</ul>
